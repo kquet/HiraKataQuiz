@@ -15,13 +15,21 @@
 		6BEAC6FC18DBBB2800175232 /* KQAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC6FB18DBBB2800175232 /* KQAppDelegate.m */; };
 		6BEAC6FF18DBBB2800175232 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC6FD18DBBB2800175232 /* Main_iPhone.storyboard */; };
 		6BEAC70218DBBB2800175232 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC70018DBBB2800175232 /* Main_iPad.storyboard */; };
-		6BEAC70518DBBB2800175232 /* KQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC70418DBBB2800175232 /* KQViewController.m */; };
 		6BEAC70718DBBB2800175232 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC70618DBBB2800175232 /* Images.xcassets */; };
 		6BEAC70E18DBBB2800175232 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC70D18DBBB2800175232 /* XCTest.framework */; };
 		6BEAC70F18DBBB2800175232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EB18DBBB2800175232 /* Foundation.framework */; };
 		6BEAC71018DBBB2800175232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EF18DBBB2800175232 /* UIKit.framework */; };
 		6BEAC71818DBBB2800175232 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC71618DBBB2800175232 /* InfoPlist.strings */; };
 		6BEAC71A18DBBB2800175232 /* HiraKataQuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC71918DBBB2800175232 /* HiraKataQuizTests.m */; };
+		6BEAC72F18DBBD6900175232 /* KQMultipleChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC72E18DBBD6900175232 /* KQMultipleChoiceViewController.m */; };
+		6BEAC73218DBBE6500175232 /* KQHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC73118DBBE6500175232 /* KQHomeViewController.m */; };
+		6BEAC73518DBBE7600175232 /* KQSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC73418DBBE7600175232 /* KQSettingsViewController.m */; };
+		6BEAC73818DBC04200175232 /* Colour.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC73718DBC04200175232 /* Colour.m */; };
+		6BEAC73B18DBC05E00175232 /* Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC73A18DBC05E00175232 /* Font.m */; };
+		6BEAC73E18DBC33400175232 /* Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC73D18DBC33400175232 /* Symbol.m */; };
+		6BEAC74218DBC3F400175232 /* SymbolDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC74118DBC3F400175232 /* SymbolDictionary.m */; };
+		6BEAC74418DBC47500175232 /* Symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BEAC74318DBC47500175232 /* Symbols.json */; };
+		6BEAC74718DBDA3C00175232 /* KQMultipleChoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEAC74618DBDA3C00175232 /* KQMultipleChoiceView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +55,29 @@
 		6BEAC6FB18DBBB2800175232 /* KQAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KQAppDelegate.m; sourceTree = "<group>"; };
 		6BEAC6FE18DBBB2800175232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		6BEAC70118DBBB2800175232 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		6BEAC70318DBBB2800175232 /* KQViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KQViewController.h; sourceTree = "<group>"; };
-		6BEAC70418DBBB2800175232 /* KQViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KQViewController.m; sourceTree = "<group>"; };
 		6BEAC70618DBBB2800175232 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6BEAC70C18DBBB2800175232 /* HiraKataQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiraKataQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEAC70D18DBBB2800175232 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6BEAC71518DBBB2800175232 /* HiraKataQuizTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HiraKataQuizTests-Info.plist"; sourceTree = "<group>"; };
 		6BEAC71718DBBB2800175232 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6BEAC71918DBBB2800175232 /* HiraKataQuizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HiraKataQuizTests.m; sourceTree = "<group>"; };
+		6BEAC72D18DBBD6900175232 /* KQMultipleChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQMultipleChoiceViewController.h; path = Classes/Controllers/KQMultipleChoiceViewController.h; sourceTree = "<group>"; };
+		6BEAC72E18DBBD6900175232 /* KQMultipleChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQMultipleChoiceViewController.m; path = Classes/Controllers/KQMultipleChoiceViewController.m; sourceTree = "<group>"; };
+		6BEAC73018DBBE6500175232 /* KQHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQHomeViewController.h; path = Classes/Controllers/KQHomeViewController.h; sourceTree = "<group>"; };
+		6BEAC73118DBBE6500175232 /* KQHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQHomeViewController.m; path = Classes/Controllers/KQHomeViewController.m; sourceTree = "<group>"; };
+		6BEAC73318DBBE7600175232 /* KQSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSettingsViewController.h; path = Classes/Controllers/KQSettingsViewController.h; sourceTree = "<group>"; };
+		6BEAC73418DBBE7600175232 /* KQSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSettingsViewController.m; path = Classes/Controllers/KQSettingsViewController.m; sourceTree = "<group>"; };
+		6BEAC73618DBC04200175232 /* Colour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Colour.h; path = Classes/Utilities/Colour.h; sourceTree = "<group>"; };
+		6BEAC73718DBC04200175232 /* Colour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Colour.m; path = Classes/Utilities/Colour.m; sourceTree = "<group>"; };
+		6BEAC73918DBC05E00175232 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Font.h; path = Classes/Utilities/Font.h; sourceTree = "<group>"; };
+		6BEAC73A18DBC05E00175232 /* Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Font.m; path = Classes/Utilities/Font.m; sourceTree = "<group>"; };
+		6BEAC73C18DBC33400175232 /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Classes/Models/Symbol.h; sourceTree = "<group>"; };
+		6BEAC73D18DBC33400175232 /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Symbol.m; path = Classes/Models/Symbol.m; sourceTree = "<group>"; };
+		6BEAC74018DBC3F400175232 /* SymbolDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SymbolDictionary.h; path = Classes/Utilities/SymbolDictionary.h; sourceTree = "<group>"; };
+		6BEAC74118DBC3F400175232 /* SymbolDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SymbolDictionary.m; path = Classes/Utilities/SymbolDictionary.m; sourceTree = "<group>"; };
+		6BEAC74318DBC47500175232 /* Symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Symbols.json; sourceTree = "<group>"; };
+		6BEAC74518DBDA3C00175232 /* KQMultipleChoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQMultipleChoiceView.h; path = Classes/Views/KQMultipleChoiceView.h; sourceTree = "<group>"; };
+		6BEAC74618DBDA3C00175232 /* KQMultipleChoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQMultipleChoiceView.m; path = Classes/Views/KQMultipleChoiceView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,14 +137,15 @@
 		6BEAC6F118DBBB2800175232 /* HiraKataQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				6BEAC72318DBBCB800175232 /* Interface Builder */,
+				6BEAC72918DBBD1200175232 /* Controllers */,
+				6BEAC72A18DBBD1D00175232 /* Views */,
+				6BEAC72C18DBBD3100175232 /* Models */,
 				6BEAC6FA18DBBB2800175232 /* KQAppDelegate.h */,
 				6BEAC6FB18DBBB2800175232 /* KQAppDelegate.m */,
-				6BEAC6FD18DBBB2800175232 /* Main_iPhone.storyboard */,
-				6BEAC70018DBBB2800175232 /* Main_iPad.storyboard */,
-				6BEAC70318DBBB2800175232 /* KQViewController.h */,
-				6BEAC70418DBBB2800175232 /* KQViewController.m */,
 				6BEAC70618DBBB2800175232 /* Images.xcassets */,
 				6BEAC6F218DBBB2800175232 /* Supporting Files */,
+				6BEAC72B18DBBD2200175232 /* Utilities */,
 			);
 			path = HiraKataQuiz;
 			sourceTree = "<group>";
@@ -133,6 +157,7 @@
 				6BEAC6F418DBBB2800175232 /* InfoPlist.strings */,
 				6BEAC6F718DBBB2800175232 /* main.m */,
 				6BEAC6F918DBBB2800175232 /* HiraKataQuiz-Prefix.pch */,
+				6BEAC74318DBC47500175232 /* Symbols.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +178,91 @@
 				6BEAC71618DBBB2800175232 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6BEAC72318DBBCB800175232 /* Interface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC72618DBBCDA00175232 /* iPad */,
+				6BEAC72518DBBCD500175232 /* iPhone */,
+			);
+			name = "Interface Builder";
+			sourceTree = "<group>";
+		};
+		6BEAC72418DBBCC800175232 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC6FD18DBBB2800175232 /* Main_iPhone.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		6BEAC72518DBBCD500175232 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC72418DBBCC800175232 /* Storyboards */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		6BEAC72618DBBCDA00175232 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC72718DBBCF000175232 /* Storyboards */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		6BEAC72718DBBCF000175232 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC70018DBBB2800175232 /* Main_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		6BEAC72918DBBD1200175232 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC73018DBBE6500175232 /* KQHomeViewController.h */,
+				6BEAC73118DBBE6500175232 /* KQHomeViewController.m */,
+				6BEAC73318DBBE7600175232 /* KQSettingsViewController.h */,
+				6BEAC73418DBBE7600175232 /* KQSettingsViewController.m */,
+				6BEAC72D18DBBD6900175232 /* KQMultipleChoiceViewController.h */,
+				6BEAC72E18DBBD6900175232 /* KQMultipleChoiceViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6BEAC72A18DBBD1D00175232 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC74518DBDA3C00175232 /* KQMultipleChoiceView.h */,
+				6BEAC74618DBDA3C00175232 /* KQMultipleChoiceView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6BEAC72B18DBBD2200175232 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC73618DBC04200175232 /* Colour.h */,
+				6BEAC73718DBC04200175232 /* Colour.m */,
+				6BEAC73918DBC05E00175232 /* Font.h */,
+				6BEAC73A18DBC05E00175232 /* Font.m */,
+				6BEAC74018DBC3F400175232 /* SymbolDictionary.h */,
+				6BEAC74118DBC3F400175232 /* SymbolDictionary.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		6BEAC72C18DBBD3100175232 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6BEAC73C18DBC33400175232 /* Symbol.h */,
+				6BEAC73D18DBC33400175232 /* Symbol.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +346,7 @@
 				6BEAC70718DBBB2800175232 /* Images.xcassets in Resources */,
 				6BEAC6FF18DBBB2800175232 /* Main_iPhone.storyboard in Resources */,
 				6BEAC6F618DBBB2800175232 /* InfoPlist.strings in Resources */,
+				6BEAC74418DBC47500175232 /* Symbols.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +365,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BEAC70518DBBB2800175232 /* KQViewController.m in Sources */,
+				6BEAC73218DBBE6500175232 /* KQHomeViewController.m in Sources */,
+				6BEAC73E18DBC33400175232 /* Symbol.m in Sources */,
 				6BEAC6FC18DBBB2800175232 /* KQAppDelegate.m in Sources */,
+				6BEAC73518DBBE7600175232 /* KQSettingsViewController.m in Sources */,
+				6BEAC72F18DBBD6900175232 /* KQMultipleChoiceViewController.m in Sources */,
+				6BEAC74218DBC3F400175232 /* SymbolDictionary.m in Sources */,
 				6BEAC6F818DBBB2800175232 /* main.m in Sources */,
+				6BEAC74718DBDA3C00175232 /* KQMultipleChoiceView.m in Sources */,
+				6BEAC73B18DBC05E00175232 /* Font.m in Sources */,
+				6BEAC73818DBC04200175232 /* Colour.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +589,7 @@
 				6BEAC71F18DBBB2800175232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BEAC72018DBBB2800175232 /* Build configuration list for PBXNativeTarget "HiraKataQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +598,7 @@
 				6BEAC72218DBBB2800175232 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

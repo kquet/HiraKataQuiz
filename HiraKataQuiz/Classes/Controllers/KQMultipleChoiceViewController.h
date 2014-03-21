@@ -1,5 +1,5 @@
 //
-//  KQViewController.h
+//  KQMultipleChoiceViewController.h
 //  HiraKataQuiz
 //
 //  Created by Kael Quet on 2014-03-20.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KQViewController : UIViewController
+@interface KQMultipleChoiceViewController : UIViewController
+
+@property (nonatomic, strong) NSArray *symbolsArray;
 
 @end
