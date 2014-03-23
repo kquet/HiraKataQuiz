@@ -13,9 +13,11 @@
 
 static NSString *const MultipleChoiceSegueIdentifier = @"MultipleChoiceSegueIdentifier";
 static NSString *const SettingsSegueIdentifier = @"SettingsSegueIdentifier";
+static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
 
 @interface KQHomeViewController ()
 
+// TODO: Refactor these to their own controllers
 @property (nonatomic, strong) NSArray *symbolsArray;
 @property (nonatomic, strong) NSArray *quizSelectSymbolsArray;
 
@@ -26,13 +28,14 @@ static NSString *const SettingsSegueIdentifier = @"SettingsSegueIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self checkUserDefaults];
     
     self.symbolsArray = [SymbolDictionary generateSymbolsArray];
     self.quizSelectSymbolsArray = [SymbolDictionary generateQuizArray];
 }
 
+
+// TODO: Refactor, will no longer need prepare after the move of arrays to respective controllers
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:MultipleChoiceSegueIdentifier]) {
         KQMultipleChoiceViewController *multipleChoiceViewController = [segue destinationViewController];
@@ -48,19 +51,17 @@ static NSString *const SettingsSegueIdentifier = @"SettingsSegueIdentifier";
 #pragma mark - NSUserDefaults
 
 - (void)checkUserDefaults {
-    NSArray *userDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:@"selectedSet"];
+    NSArray *userDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:UserDefaultsSelectionIdentifier];
     if (userDefaults == nil) {
-        NSLog(@"null defaults");
         NSArray *defaultSelection = [NSArray arrayWithObjects: @(1), @(2), @(3), @(4), nil];
-        [[NSUserDefaults standardUserDefaults] setObject:defaultSelection forKey:@"selectedSet"];
-    } else {
-        NSLog(@"defaults: %@", userDefaults);
+        [[NSUserDefaults standardUserDefaults] setObject:defaultSelection forKey:UserDefaultsSelectionIdentifier];
     }
 }
 
 #pragma mark - rewind segue
 
 - (IBAction)unwindToHomeView:(UIStoryboardSegue *)unwindSegue {
+    // TODO: Only do if coming back from settings
     self.quizSelectSymbolsArray = [SymbolDictionary generateQuizArray];
 }
 

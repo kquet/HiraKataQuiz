@@ -8,6 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "KQMultipleChoiceView.h"
+#import "Colour.h"
+#import "KQAnswerButton.h"
 
 @interface KQMultipleChoiceView ()
 
@@ -22,28 +24,19 @@
 
 @implementation KQMultipleChoiceView
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        [[self.answerButtonA layer] setBorderWidth:1.0f];
-        [[self.answerButtonA layer] setBorderColor:[UIColor whiteColor].CGColor];
         
-        [[self.answerButtonB layer] setBorderWidth:1.0f];
-        [[self.answerButtonB layer] setBorderColor:[UIColor whiteColor].CGColor];
-        
-        [[self.answerButtonC layer] setBorderWidth:1.0f];
-        [[self.answerButtonC layer] setBorderColor:[UIColor whiteColor].CGColor];
-        
-        [[self.answerButtonD layer] setBorderWidth:1.0f];
-        [[self.answerButtonD layer] setBorderColor:[UIColor whiteColor].CGColor];
     }
     return self;
 }
 
 - (void)configureQuestion:(NSString *)question withAnswers:(NSArray *)answers {
     UIButton *button;
+    
+    // TODO: Test use of IBCollection
     NSArray *answerButtons = [NSArray arrayWithObjects:
                           self.answerButtonA,
                           self.answerButtonB,
@@ -53,7 +46,7 @@
     self.clueLabel.text = question;
     for (int i = 0; i < [answers count]; i++) {
         button = (UIButton *)answerButtons[i];
-        [button setEnabled:YES];
+        [((KQAnswerButton *)button) setEnabled:YES];
         [button setTitle:answers[i] forState:UIControlStateNormal];
     }
 }

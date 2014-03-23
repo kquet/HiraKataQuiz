@@ -12,5 +12,6 @@
 
 + (UIColor *)appBlueColor;
 + (UIColor *)selectionGreenColor;
++ (UIColor *)falseAnswerRedColor;
 
 @end

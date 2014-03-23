@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BB2CCB218DF857C00E364AD /* KQAnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */; };
 		6BDC2EBA18DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */; };
 		6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */; };
 		6BEAC6EC18DBBB2800175232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EB18DBBB2800175232 /* Foundation.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BB2CCB018DF857C00E364AD /* KQAnswerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQAnswerButton.h; path = Classes/Views/KQAnswerButton.h; sourceTree = "<group>"; };
+		6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQAnswerButton.m; path = Classes/Views/KQAnswerButton.m; sourceTree = "<group>"; };
 		6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSymbolSettingsCollectionViewCell.h; path = Classes/Views/KQSymbolSettingsCollectionViewCell.h; sourceTree = "<group>"; };
 		6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSymbolSettingsCollectionViewCell.m; path = Classes/Views/KQSymbolSettingsCollectionViewCell.m; sourceTree = "<group>"; };
 		6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KQSymbolSettingsCollectionViewCell.xib; path = "Interface Builder/KQSymbolSettingsCollectionViewCell.xib"; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 				6BEAC74618DBDA3C00175232 /* KQMultipleChoiceView.m */,
 				6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */,
 				6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */,
+				6BB2CCB018DF857C00E364AD /* KQAnswerButton.h */,
+				6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				6BEAC73518DBBE7600175232 /* KQSettingsViewController.m in Sources */,
 				6BEAC72F18DBBD6900175232 /* KQMultipleChoiceViewController.m in Sources */,
 				6BEAC74218DBC3F400175232 /* SymbolDictionary.m in Sources */,
+				6BB2CCB218DF857C00E364AD /* KQAnswerButton.m in Sources */,
 				6BEAC6F818DBBB2800175232 /* main.m in Sources */,
 				6BEAC74718DBDA3C00175232 /* KQMultipleChoiceView.m in Sources */,
 				6BEAC73B18DBC05E00175232 /* Font.m in Sources */,

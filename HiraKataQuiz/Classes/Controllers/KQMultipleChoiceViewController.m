@@ -10,6 +10,7 @@
 #import "KQMultipleChoiceView.h"
 #import "SymbolDictionary.h"
 #import "Symbol.h"
+#import "KQAnswerButton.h"
 
 typedef enum {
     KanaTypeHiragana,
@@ -21,6 +22,7 @@ typedef enum {
 @property (strong, nonatomic) IBOutlet KQMultipleChoiceView *multipleChoiceView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *kanaTypeSegmentedControl;
 
+@property (nonatomic, strong) NSArray *answerButtons;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonA;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonB;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonC;
@@ -39,6 +41,11 @@ typedef enum {
     self.quizKanaType = KanaTypeHiragana;
     [self.kanaTypeSegmentedControl setSelectedSegmentIndex:0];
     [self generateQuestion];
+    
+    self.answerButtons = [[NSArray alloc] initWithObjects:self.answerButtonA,
+                          self.answerButtonB,
+                          self.answerButtonC,
+                          self.answerButtonD, nil];
 }
 
 - (void)generateQuestion {
@@ -75,27 +82,10 @@ typedef enum {
 }
 
 - (IBAction)answerButtonTapped:(id)sender {
-    BOOL isCorrect;
-    
-    if (sender == self.answerButtonA) {
-        isCorrect = self.answerIndex == 0;
-    } else if (sender == self.answerButtonB) {
-        isCorrect = self.answerIndex == 1;
-    } else if (sender == self.answerButtonC) {
-        isCorrect = self.answerIndex == 2;
-    } else if (sender == self.answerButtonD) {
-        isCorrect = self.answerIndex == 3;
-    }
-    
-    if (isCorrect) {
+    if ([self.answerButtons indexOfObject:sender] == self.answerIndex) {
         [self generateQuestion];
     } else {
-        [((UIButton*)sender) setEnabled:NO];
-        [[[UIAlertView alloc] initWithTitle:@"Wrong"
-                                    message:@"Try Again"
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+        [((UIButton *)sender) setEnabled:NO];
     }
 }
 

@@ -15,7 +15,6 @@ static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollecti
 @interface KQSettingsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *characterSetCollectionView;
-
 @property (nonatomic, strong) NSArray *userSelectedCharacterDefaults;
 
 @end
@@ -24,15 +23,9 @@ static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollecti
 
 -(void)viewDidLoad {
     [self.characterSetCollectionView registerNib:[UINib nibWithNibName:CharacterCellReuseIdentifier bundle:nil] forCellWithReuseIdentifier:CharacterCellReuseIdentifier];
-    [self retrieveUserDefaults];
-    
     self.characterSetCollectionView.allowsMultipleSelection = YES;
-}
-
-#pragma mark - Buttons
-
-- (IBAction)backButtonTapped:(id)sender {
     
+    [self retrieveUserDefaults];
 }
 
 #pragma mark - NSUserDefaults
@@ -43,11 +36,9 @@ static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollecti
 
 - (void)saveUserDefaultsSelectionArray:(NSArray *)selection {
     NSMutableArray *indexArray = [[NSMutableArray alloc] init];
-    
     for (NSIndexPath *indexPath in selection) {
         [indexArray addObject:[[NSNumber alloc] initWithInteger:indexPath.item]];
     }
-    
     [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:@"selectedSet"];
 }
 
@@ -65,9 +56,9 @@ static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollecti
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KQSymbolSettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CharacterCellReuseIdentifier forIndexPath:indexPath];
-    
     [cell configureCellForSymbol:self.symbolsArray[indexPath.item]];
     
+    // TODO: Issues where the selected items do not appear as selected without collectionview being scrolled by user
     if ([self.userSelectedCharacterDefaults containsObject:[self.symbolsArray[indexPath.item] getSymbolId]]) {
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     }
