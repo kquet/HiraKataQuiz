@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BDC2EBA18DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */; };
+		6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */; };
 		6BEAC6EC18DBBB2800175232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EB18DBBB2800175232 /* Foundation.framework */; };
 		6BEAC6EE18DBBB2800175232 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6ED18DBBB2800175232 /* CoreGraphics.framework */; };
 		6BEAC6F018DBBB2800175232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EF18DBBB2800175232 /* UIKit.framework */; };
@@ -43,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSymbolSettingsCollectionViewCell.h; path = Classes/Views/KQSymbolSettingsCollectionViewCell.h; sourceTree = "<group>"; };
+		6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSymbolSettingsCollectionViewCell.m; path = Classes/Views/KQSymbolSettingsCollectionViewCell.m; sourceTree = "<group>"; };
+		6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KQSymbolSettingsCollectionViewCell.xib; path = "Interface Builder/KQSymbolSettingsCollectionViewCell.xib"; sourceTree = "<group>"; };
 		6BEAC6E818DBBB2800175232 /* HiraKataQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiraKataQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEAC6EB18DBBB2800175232 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BEAC6ED18DBBB2800175232 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BDC2EBC18DE7B2F00FC0413 /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */,
+			);
+			name = "Collection View Cells";
+			sourceTree = "<group>";
+		};
 		6BEAC6DF18DBBB2800175232 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 		6BEAC72518DBBCD500175232 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				6BDC2EBC18DE7B2F00FC0413 /* Collection View Cells */,
 				6BEAC72418DBBCC800175232 /* Storyboards */,
 			);
 			name = iPhone;
@@ -239,6 +253,8 @@
 			children = (
 				6BEAC74518DBDA3C00175232 /* KQMultipleChoiceView.h */,
 				6BEAC74618DBDA3C00175232 /* KQMultipleChoiceView.m */,
+				6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */,
+				6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -346,6 +362,7 @@
 				6BEAC70718DBBB2800175232 /* Images.xcassets in Resources */,
 				6BEAC6FF18DBBB2800175232 /* Main_iPhone.storyboard in Resources */,
 				6BEAC6F618DBBB2800175232 /* InfoPlist.strings in Resources */,
+				6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */,
 				6BEAC74418DBC47500175232 /* Symbols.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +384,7 @@
 			files = (
 				6BEAC73218DBBE6500175232 /* KQHomeViewController.m in Sources */,
 				6BEAC73E18DBC33400175232 /* Symbol.m in Sources */,
+				6BDC2EBA18DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m in Sources */,
 				6BEAC6FC18DBBB2800175232 /* KQAppDelegate.m in Sources */,
 				6BEAC73518DBBE7600175232 /* KQSettingsViewController.m in Sources */,
 				6BEAC72F18DBBD6900175232 /* KQMultipleChoiceViewController.m in Sources */,

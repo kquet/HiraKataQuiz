@@ -10,4 +10,7 @@
 
 @interface Colour : NSObject
 
++ (UIColor *)appBlueColor;
++ (UIColor *)selectionGreenColor;
+
 @end

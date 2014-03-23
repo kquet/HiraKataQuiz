@@ -10,7 +10,7 @@
 
 @interface Symbol ()
 
-@property (nonatomic) NSInteger symbolId;
+@property (nonatomic) NSNumber *symbolId;
 
 @end
 
@@ -21,7 +21,7 @@
     
     if(dictionary[@"id"] != nil) {
         if([dictionary[@"id"] isKindOfClass:[NSNumber class]]) {
-            self.symbolId = [dictionary[@"id"] integerValue];
+            self.symbolId = dictionary[@"id"];
         }
     }
     
@@ -44,6 +44,10 @@
     }
     
     return self;
+}
+
+- (NSNumber *)getSymbolId {
+    return self.symbolId;
 }
 
 @end

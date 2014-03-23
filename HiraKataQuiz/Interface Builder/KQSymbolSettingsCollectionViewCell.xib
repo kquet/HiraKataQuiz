@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KQSymbolSettingsCollectionViewCell" id="N23-ux-nAk" customClass="KQSymbolSettingsCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="92" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="92" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-xZ-moc">
+                        <rect key="frame" x="10" y="13" width="27" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGp-lg-RUG">
+                        <rect key="frame" x="39" y="13" width="14" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGg-h5-cef">
+                        <rect key="frame" x="68" y="13" width="14" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="hGp-lg-RUG" secondAttribute="centerX" id="B8i-wv-wEE"/>
+                <constraint firstAttribute="centerY" secondItem="HGg-h5-cef" secondAttribute="centerY" constant="0.5" id="G9e-bQ-Yvu"/>
+                <constraint firstAttribute="centerY" secondItem="hGp-lg-RUG" secondAttribute="centerY" constant="0.5" id="OWX-oK-bWS"/>
+                <constraint firstItem="UkY-xZ-moc" firstAttribute="leading" secondItem="N23-ux-nAk" secondAttribute="leading" constant="10" id="WnO-LV-cVS"/>
+                <constraint firstAttribute="trailing" secondItem="HGg-h5-cef" secondAttribute="trailing" constant="10" id="rS6-Zl-2qu"/>
+                <constraint firstAttribute="centerY" secondItem="UkY-xZ-moc" secondAttribute="centerY" constant="0.5" id="ujc-fg-Zya"/>
+            </constraints>
+            <size key="customSize" width="216" height="76"/>
+            <connections>
+                <outlet property="hiraganaLabel" destination="hGp-lg-RUG" id="DRY-Qb-uG7"/>
+                <outlet property="katakanaLabel" destination="HGg-h5-cef" id="IEf-uD-3Fj"/>
+                <outlet property="phoneticLabel" destination="UkY-xZ-moc" id="SLH-G5-36r"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>

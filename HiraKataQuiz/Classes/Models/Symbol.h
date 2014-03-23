@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *katakana;
 
 - (id)initWithSymbolDictionary:(NSMutableDictionary *)dictionary;
+- (NSNumber *)getSymbolId;
 
 @end

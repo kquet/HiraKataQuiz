@@ -7,43 +7,80 @@
 //
 
 #import "KQSettingsViewController.h"
+#import "KQSymbolSettingsCollectionViewCell.h"
+#import "Symbol.h";
 
-@interface KQSettingsViewController ()
+static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollectionViewCell";
+
+@interface KQSettingsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *characterSetCollectionView;
+
+@property (nonatomic, strong) NSArray *userSelectedCharacterDefaults;
 
 @end
 
 @implementation KQSettingsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+-(void)viewDidLoad {
+    [self.characterSetCollectionView registerNib:[UINib nibWithNibName:CharacterCellReuseIdentifier bundle:nil] forCellWithReuseIdentifier:CharacterCellReuseIdentifier];
+    [self retrieveUserDefaults];
+    
+    self.characterSetCollectionView.allowsMultipleSelection = YES;
+}
+
+#pragma mark - Buttons
+
+- (IBAction)backButtonTapped:(id)sender {
+    
+}
+
+#pragma mark - NSUserDefaults
+
+- (void)retrieveUserDefaults {
+    self.userSelectedCharacterDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:@"selectedSet"];
+}
+
+- (void)saveUserDefaultsSelectionArray:(NSArray *)selection {
+    NSMutableArray *indexArray = [[NSMutableArray alloc] init];
+    
+    for (NSIndexPath *indexPath in selection) {
+        [indexArray addObject:[[NSNumber alloc] initWithInteger:indexPath.item]];
     }
-    return self;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:@"selectedSet"];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+#pragma mark - UICollectionViewDataSource
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.symbolsArray count];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
+# pragma mark - UICollectionViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    KQSymbolSettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CharacterCellReuseIdentifier forIndexPath:indexPath];
+    
+    [cell configureCellForSymbol:self.symbolsArray[indexPath.item]];
+    
+    if ([self.userSelectedCharacterDefaults containsObject:[self.symbolsArray[indexPath.item] getSymbolId]]) {
+        [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    }
+    
+    return cell;
 }
-*/
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self saveUserDefaultsSelectionArray:[collectionView indexPathsForSelectedItems]];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self saveUserDefaultsSelectionArray:[collectionView indexPathsForSelectedItems]];
+}
 
 @end

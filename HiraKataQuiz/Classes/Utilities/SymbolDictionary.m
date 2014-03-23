@@ -26,4 +26,23 @@
     return [symbolsArray copy];
 }
 
++(NSArray *)generateQuizArray {
+    NSArray *userDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:@"selectedSet"];
+    
+    NSMutableArray *symbolsArray = [[NSMutableArray alloc] init];
+    
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"Symbols" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:jsonFilePath];
+    NSArray *symbolsJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    for (NSMutableDictionary *symbolItem in symbolsJson) {
+        if ([userDefaults containsObject:symbolItem[@"id"]]) {
+            Symbol *symbol = [[Symbol alloc] initWithSymbolDictionary:symbolItem];
+            [symbolsArray addObject:symbol];
+        }
+    }
+    
+    return [symbolsArray copy];
+}
+
 @end

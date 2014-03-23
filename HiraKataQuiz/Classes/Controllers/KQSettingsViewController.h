@@ -10,4 +10,6 @@
 
 @interface KQSettingsViewController : UIViewController
 
+@property (nonatomic, strong) NSArray *symbolsArray;
+
 @end
