@@ -135,6 +135,7 @@ static NSInteger const countdownTime = 10;
         }
     }
     
+    self.countdownTime = 0;
     [self generateQuestion];
 }
 
