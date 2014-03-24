@@ -211,8 +211,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJe-XB-MKE">
-                                        <rect key="frame" x="231" y="20" width="68" height="24"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZj-61-qj4">
+                                        <rect key="frame" x="20" y="20" width="22" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJe-XB-MKE">
+                                        <rect key="frame" x="232" y="20" width="68" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,9 +228,13 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="oZj-61-qj4" firstAttribute="top" secondItem="jV5-a3-iT3" secondAttribute="top" constant="20" id="05r-e0-E6V"/>
                                     <constraint firstAttribute="height" constant="168" id="1vp-TF-6c1"/>
                                     <constraint firstAttribute="centerY" secondItem="xZq-eo-2Of" secondAttribute="centerY" id="4Ig-px-bXs"/>
+                                    <constraint firstItem="oZj-61-qj4" firstAttribute="leading" secondItem="jV5-a3-iT3" secondAttribute="leading" constant="20" id="9Yo-2a-wv6"/>
                                     <constraint firstAttribute="centerX" secondItem="xZq-eo-2Of" secondAttribute="centerX" constant="-0.5" id="Ec1-Te-9wi"/>
+                                    <constraint firstAttribute="trailing" secondItem="oJe-XB-MKE" secondAttribute="trailing" constant="20" id="krE-51-Thc"/>
+                                    <constraint firstItem="oJe-XB-MKE" firstAttribute="top" secondItem="jV5-a3-iT3" secondAttribute="top" constant="20" id="o3n-Ct-cYz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-ZL-eyq" userLabel="Footer">
@@ -360,6 +371,8 @@
                             <outlet property="answerButtonC" destination="dee-Uv-p0m" id="b7S-ti-olq"/>
                             <outlet property="answerButtonD" destination="5Ac-kq-NQL" id="Si1-BY-off"/>
                             <outlet property="clueLabel" destination="xZq-eo-2Of" id="htb-bw-Bc5"/>
+                            <outlet property="scoreLabel" destination="oJe-XB-MKE" id="J5J-Yj-NIN"/>
+                            <outlet property="timerLabel" destination="oZj-61-qj4" id="Xdy-0Y-Frf"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="5KC-M0-J8r"/>

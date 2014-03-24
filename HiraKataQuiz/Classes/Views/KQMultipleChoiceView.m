@@ -13,12 +13,17 @@
 
 @interface KQMultipleChoiceView ()
 
+
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonA;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonB;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonC;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonD;
+
+@property (nonatomic, weak) NSTimer *timer;
 
 @end
 
@@ -49,6 +54,31 @@
         [((KQAnswerButton *)button) setEnabled:YES];
         [button setTitle:answers[i] forState:UIControlStateNormal];
     }
+}
+
+-(void)updateClockWithTime:(NSInteger)countdownTime {
+    self.timerLabel.text = [NSString stringWithFormat:@"%ld", (long)countdownTime];
+}
+
+- (void)updateScoreWithScore:(NSInteger)score withIncrease:(NSInteger)increased{
+    UIColor *scoreUpdateColour = [UIColor blueColor];
+    
+    if (increased > 0) {
+        scoreUpdateColour = [UIColor greenColor];
+    } else if (increased < 0){
+        scoreUpdateColour = [UIColor redColor];
+    }
+    
+    self.scoreLabel.textColor = scoreUpdateColour;
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.3f target:self selector:@selector(resetScoreTextColour) userInfo:nil repeats:YES];
+}
+
+- (void)resetScoreTextColour {
+    self.scoreLabel.textColor = [UIColor blueColor];
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 @end

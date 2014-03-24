@@ -11,5 +11,7 @@
 @interface KQMultipleChoiceView : UIView
 
 - (void)configureQuestion:(NSString *)question withAnswers:(NSArray *)answers;
+- (void)updateClockWithTime:(NSInteger)countdownTime;
+- (void)updateScoreWithScore:(NSInteger)score withIncrease:(NSInteger)increased;
 
 @end
