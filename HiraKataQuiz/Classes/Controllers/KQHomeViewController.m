@@ -10,8 +10,10 @@
 #import "KQMultipleChoiceViewController.h"
 #import "KQSettingsViewController.h"
 #import "SymbolDictionary.h"
+#import "Symbol.h"
 
-static NSString *const MultipleChoiceSegueIdentifier = @"MultipleChoiceSegueIdentifier";
+static NSString *const PhoneticQuizSegueIdentifier = @"PhoneticQuizSegueIdentifier";
+static NSString *const KanaQuizSegueIdentifier = @"KanaQuizSegueIdentifier";
 static NSString *const SettingsSegueIdentifier = @"SettingsSegueIdentifier";
 static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
 
@@ -37,10 +39,14 @@ static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
 
 // TODO: Refactor, will no longer need prepare after the move of arrays to respective controllers
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:MultipleChoiceSegueIdentifier]) {
+    if ([[segue identifier] isEqualToString:PhoneticQuizSegueIdentifier]) {
         KQMultipleChoiceViewController *multipleChoiceViewController = [segue destinationViewController];
-
         [multipleChoiceViewController setSymbolsArray:self.quizSelectSymbolsArray];
+        [multipleChoiceViewController setQuizType:SolutionPhoneticAnswersHiragana];
+    } else if ([[segue identifier] isEqualToString:KanaQuizSegueIdentifier]) {
+        KQMultipleChoiceViewController *multipleChoiceViewController = [segue destinationViewController];
+        [multipleChoiceViewController setSymbolsArray:self.quizSelectSymbolsArray];
+        [multipleChoiceViewController setQuizType:SolutionHiraganaAnswersPhonetic];
     } else if ([[segue identifier] isEqualToString:SettingsSegueIdentifier]) {
         KQSettingsViewController *settingsViewController = [segue destinationViewController];
         

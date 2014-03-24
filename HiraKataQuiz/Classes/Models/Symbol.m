@@ -50,4 +50,44 @@
     return self.symbolId;
 }
 
+-(NSString *)getSolutionStringForQuizType:(QuizType)quizType {
+    NSString *solutionString;
+    
+    switch (quizType) {
+        case SolutionHiraganaAnswersPhonetic:
+            solutionString = self.hiragana;
+            break;
+        case SolutionKatakanaAnswersPhonetic:
+            solutionString = self.katakana;
+            break;
+        case SolutionPhoneticAnswersHiragana:
+        case SolutionPhoneticAnswersKatakana:
+        default:
+            solutionString = self.phonetic;
+            break;
+    }
+    
+    return solutionString;
+}
+
+- (NSString *)getAnswerStringForQuizType:(QuizType)quizType {
+    NSString *answerString;
+    
+    switch (quizType) {
+        case SolutionPhoneticAnswersHiragana:
+            answerString = self.hiragana;
+            break;
+        case SolutionPhoneticAnswersKatakana:
+            answerString = self.katakana;
+            break;
+        case SolutionHiraganaAnswersPhonetic:
+        case SolutionKatakanaAnswersPhonetic:
+        default:
+            answerString = self.phonetic;
+            break;
+    }
+    
+    return answerString;
+}
+
 @end

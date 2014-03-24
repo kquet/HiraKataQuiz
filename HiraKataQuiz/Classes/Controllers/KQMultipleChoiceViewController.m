@@ -9,13 +9,7 @@
 #import "KQMultipleChoiceViewController.h"
 #import "KQMultipleChoiceView.h"
 #import "SymbolDictionary.h"
-#import "Symbol.h"
 #import "KQAnswerButton.h"
-
-typedef enum {
-    KanaTypeHiragana,
-    KanaTypeKatakana
-} KanaType;
 
 @interface KQMultipleChoiceViewController ()
 
@@ -28,7 +22,6 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonC;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonD;
 
-@property (nonatomic) KanaType quizKanaType;
 @property (nonatomic) NSInteger answerIndex;
 
 @end
@@ -38,7 +31,6 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.quizKanaType = KanaTypeHiragana;
     [self.kanaTypeSegmentedControl setSelectedSegmentIndex:0];
     [self generateQuestion];
     
@@ -49,36 +41,29 @@ typedef enum {
 }
 
 - (void)generateQuestion {
+    // TODO: Refactor for better error handling
     if ([self.symbolsArray count] < 1) {
         return;
     }
     
     self.answerIndex = arc4random() % 4;
-    NSMutableArray *answerArray = [[NSMutableArray alloc] init];
+    NSString *solutionString;
     NSString *answerString;
+    NSMutableArray *answerArray = [[NSMutableArray alloc] init];
     
     while ([answerArray count] < 4) {
         Symbol *symbol = [self.symbolsArray objectAtIndex:(arc4random() % [self.symbolsArray count])];
+        answerString = [symbol getAnswerStringForQuizType:self.quizType];
         
-        if(![answerArray containsObject:symbol.hiragana] && ![answerArray containsObject:symbol.katakana]) {
-            
+        if(![answerArray containsObject:answerString]) {
             if ([answerArray count] == self.answerIndex) {
-                answerString = symbol.phonetic;
+                solutionString = [symbol getSolutionStringForQuizType:self.quizType];
             }
-            
-            switch (self.quizKanaType) {
-                case KanaTypeKatakana:
-                    [answerArray addObject:symbol.katakana];
-                    break;
-                case KanaTypeHiragana:
-                default:
-                    [answerArray addObject:symbol.hiragana];
-                    break;
-            }
+            [answerArray addObject:answerString];
         }
     }
     
-    [self.multipleChoiceView configureQuestion:answerString withAnswers:[answerArray copy]];
+    [self.multipleChoiceView configureQuestion:solutionString withAnswers:[answerArray copy]];
 }
 
 - (IBAction)answerButtonTapped:(id)sender {
@@ -91,10 +76,27 @@ typedef enum {
 
 - (IBAction)kanaTypeSegmentedControlTapped:(id)sender {
     if ([self.kanaTypeSegmentedControl selectedSegmentIndex] == 0) {
-        self.quizKanaType = KanaTypeHiragana;
+        switch (self.quizType) {
+            case SolutionPhoneticAnswersKatakana:
+                self.quizType = SolutionPhoneticAnswersHiragana;
+                break;
+            case SolutionKatakanaAnswersPhonetic:
+                self.quizType = SolutionHiraganaAnswersPhonetic;
+            default:
+                break;
+        }
     } else {
-        self.quizKanaType = KanaTypeKatakana;
+        switch (self.quizType) {
+            case SolutionPhoneticAnswersHiragana:
+                self.quizType = SolutionPhoneticAnswersKatakana;
+                break;
+            case SolutionHiraganaAnswersPhonetic:
+                self.quizType = SolutionKatakanaAnswersPhonetic;
+            default:
+                break;
+        }
     }
+    
     [self generateQuestion];
 }
 

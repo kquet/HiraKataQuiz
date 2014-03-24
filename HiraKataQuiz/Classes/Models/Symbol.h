@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    SolutionPhoneticAnswersHiragana = 0,
+    SolutionPhoneticAnswersKatakana,
+    SolutionHiraganaAnswersPhonetic,
+    SolutionKatakanaAnswersPhonetic
+} QuizType;
+
 @interface Symbol : NSObject
 
 @property (nonatomic, strong) NSString *phonetic;
@@ -16,5 +23,7 @@
 
 - (id)initWithSymbolDictionary:(NSMutableDictionary *)dictionary;
 - (NSNumber *)getSymbolId;
+- (NSString *)getSolutionStringForQuizType:(QuizType)quizType;
+- (NSString *)getAnswerStringForQuizType:(QuizType)quizType;
 
 @end
