@@ -7,25 +7,18 @@
 //
 
 #import "KQAnswerButton.h"
+#import "Colour.h"
 
 @implementation KQAnswerButton
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+-(void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+    
+    if(enabled) {
+        self.backgroundColor = [Colour appBlueColor];
+    } else {
+        self.backgroundColor = [Colour falseAnswerRedColor];
     }
-    return self;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

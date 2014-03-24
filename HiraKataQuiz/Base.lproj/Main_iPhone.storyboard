@@ -407,6 +407,27 @@
                                     <constraint firstAttribute="centerY" secondItem="Jpu-l0-mat" secondAttribute="centerY" id="sx8-4j-3YB"/>
                                 </constraints>
                             </view>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-ac-zVw">
+                                <rect key="frame" x="0.0" y="56" width="320" height="512"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AOH-Sv-x8h">
+                                    <size key="itemSize" width="92" height="44"/>
+                                    <size key="headerReferenceSize" width="50" height="104"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterSelectionHeaderIdentifier" id="McV-cc-mti">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y3R-Od-6AY" id="pD9-eZ-Pcd"/>
+                                    <outlet property="delegate" destination="Y3R-Od-6AY" id="cqk-fW-E94"/>
+                                </connections>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuV-fT-TOs" userLabel="Instructions">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -419,44 +440,47 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="FdZ-MM-PDZ" secondAttribute="centerY" id="G2r-6O-OIA"/>
                                     <constraint firstAttribute="trailing" secondItem="FdZ-MM-PDZ" secondAttribute="trailing" constant="54" id="JfU-Za-4dj"/>
                                     <constraint firstAttribute="height" constant="44" id="Vf0-Kw-ou1"/>
                                 </constraints>
                             </view>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-ac-zVw">
-                                <rect key="frame" x="0.0" y="160" width="320" height="408"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AOH-Sv-x8h">
-                                    <size key="itemSize" width="92" height="44"/>
-                                    <size key="headerReferenceSize" width="10" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oVk-5R-Cf8">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y3R-Od-6AY" id="pD9-eZ-Pcd"/>
-                                    <outlet property="delegate" destination="Y3R-Od-6AY" id="cqk-fW-E94"/>
-                                </connections>
-                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijc-6I-4kC">
+                                <rect key="frame" x="0.0" y="56" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="11Y-Pd-x6l"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqJ-cF-1gi">
+                                <rect key="frame" x="0.0" y="130" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GZc-jM-5Wj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GuV-fT-TOs" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="1T0-7e-1Th"/>
                             <constraint firstItem="GuV-fT-TOs" firstAttribute="top" secondItem="wsT-nP-Jk0" secondAttribute="bottom" constant="30" id="35x-OS-sLE"/>
                             <constraint firstItem="A1N-af-wVK" firstAttribute="top" secondItem="p1p-ac-zVw" secondAttribute="bottom" id="Cdk-Vn-ARq"/>
+                            <constraint firstAttribute="trailing" secondItem="ijc-6I-4kC" secondAttribute="trailing" id="EhN-ej-ckp"/>
                             <constraint firstItem="wsT-nP-Jk0" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="Iuy-4a-G7G"/>
                             <constraint firstAttribute="trailing" secondItem="p1p-ac-zVw" secondAttribute="trailing" id="Onm-yT-Bqq"/>
-                            <constraint firstItem="p1p-ac-zVw" firstAttribute="top" secondItem="GuV-fT-TOs" secondAttribute="bottom" constant="30" id="YQl-03-QDq"/>
+                            <constraint firstItem="mqJ-cF-1gi" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="VBa-1l-OWs"/>
                             <constraint firstAttribute="trailing" secondItem="wsT-nP-Jk0" secondAttribute="trailing" id="Ze7-FE-wlh"/>
                             <constraint firstItem="wsT-nP-Jk0" firstAttribute="top" secondItem="dGc-qG-Kcy" secondAttribute="bottom" id="Zi1-Sj-in6"/>
+                            <constraint firstAttribute="trailing" secondItem="mqJ-cF-1gi" secondAttribute="trailing" id="iiW-16-db8"/>
                             <constraint firstAttribute="trailing" secondItem="GuV-fT-TOs" secondAttribute="trailing" id="kX0-Df-FD6"/>
+                            <constraint firstItem="ijc-6I-4kC" firstAttribute="top" secondItem="wsT-nP-Jk0" secondAttribute="bottom" id="l9H-Mp-fv8"/>
+                            <constraint firstItem="p1p-ac-zVw" firstAttribute="top" secondItem="wsT-nP-Jk0" secondAttribute="bottom" id="q4d-pQ-9DZ"/>
+                            <constraint firstItem="ijc-6I-4kC" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="scN-xc-nbv"/>
+                            <constraint firstItem="mqJ-cF-1gi" firstAttribute="top" secondItem="GuV-fT-TOs" secondAttribute="bottom" id="xva-Nk-pHH"/>
                             <constraint firstItem="p1p-ac-zVw" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="yMq-6c-XoB"/>
                         </constraints>
                     </view>

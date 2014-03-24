@@ -8,9 +8,10 @@
 
 #import "KQSettingsViewController.h"
 #import "KQSymbolSettingsCollectionViewCell.h"
-#import "Symbol.h";
+#import "Symbol.h"
 
 static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollectionViewCell";
+static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelectionHeaderIdentifier";
 
 @interface KQSettingsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -53,6 +54,12 @@ static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollecti
 }
 
 # pragma mark - UICollectionViewDelegate
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CharacterSelectionHeaderIdentifier forIndexPath:indexPath];
+    
+    return headerView;
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KQSymbolSettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CharacterCellReuseIdentifier forIndexPath:indexPath];
