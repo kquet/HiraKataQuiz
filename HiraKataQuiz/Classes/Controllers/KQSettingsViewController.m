@@ -41,6 +41,8 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
         [indexArray addObject:[[NSNumber alloc] initWithInteger:indexPath.item]];
     }
     [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:@"selectedSet"];
+    
+    [self retrieveUserDefaults];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -67,9 +69,9 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
     
     // TODO: Issues where the selected items do not appear as selected without collectionview being scrolled by user
     if ([self.userSelectedCharacterDefaults containsObject:[self.symbolsArray[indexPath.item] getSymbolId]]) {
+        [cell setSelected:YES];
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     }
-    
     return cell;
 }
 

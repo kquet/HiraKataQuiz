@@ -23,8 +23,7 @@
 - (void)prepareForReuse {
     [super prepareForReuse];
     
-    self.selected = NO;
-    self.backgroundColor = [UIColor whiteColor];
+    [self setSelected:NO];
     
     self.phoneticLabel.text = nil;
     self.hiraganaLabel.text = nil;
