@@ -3,366 +3,426 @@
 		"id":0,
 		"phonetic":"a",
 		"hiragana":"あ",
-		"katakana":"ア",
+		"katakana":"ア"
 	},
 	{
 		"id":1,
 		"phonetic":"i",
 		"hiragana":"い",
-		"katakana":"イ",
+		"katakana":"イ"
 	},
 	{
 		"id":2,
 		"phonetic":"u",
 		"hiragana":"う",
-		"katakana":"ウ",
+		"katakana":"ウ"
 	},
 	{
 		"id":3,
 		"phonetic":"e",
 		"hiragana":"え",
-		"katakana":"エ",
+		"katakana":"エ"
 	},
 	{
 		"id":4,
 		"phonetic":"o",
 		"hiragana":"お",
-		"katakana":"オ",
+		"katakana":"オ"
 	},
 	{
 		"id":5,
 		"phonetic":"ka",
 		"hiragana":"か",
-		"katakana":"カ",
+		"katakana":"カ"
 	},
 	{
 		"id":6,
 		"phonetic":"ki",
 		"hiragana":"き",
-		"katakana":"キ",
+		"katakana":"キ"
 	},
 	{
 		"id":7,
 		"phonetic":"ku",
 		"hiragana":"く",
-		"katakana":"ク",
+		"katakana":"ク"
 	},
 	{
 		"id":8,
 		"phonetic":"ke",
 		"hiragana":"け",
-		"katakana":"ケ",
+		"katakana":"ケ"
 	},
 	{
 		"id":9,
 		"phonetic":"ko",
 		"hiragana":"こ",
-		"katakana":"コ",
+		"katakana":"コ"
 	},
 	{
 		"id":10,
 		"phonetic":"sa",
 		"hiragana":"さ",
-		"katakana":"サ",
-	},{
+		"katakana":"サ"
+	},
+	{
 		"id":11,
 		"phonetic":"shi",
 		"hiragana":"し",
-		"katakana":"シ",
-	},{
+		"katakana":"シ"
+	},
+	{
 		"id":12,
 		"phonetic":"su",
 		"hiragana":"す",
-		"katakana":"ス",
-	},{
+		"katakana":"ス"
+	},
+	{
 		"id":13,
 		"phonetic":"se",
 		"hiragana":"せ",
-		"katakana":"セ",
-	},{
+		"katakana":"セ"
+	},
+	{
 		"id":14,
 		"phonetic":"so",
 		"hiragana":"そ",
-		"katakana":"ソ",
-	},{
+		"katakana":"ソ"
+	},
+	{
 		"id":15,
 		"phonetic":"ta",
 		"hiragana":"た",
-		"katakana":"タ",
-	},{
+		"katakana":"タ"
+	},
+	{
 		"id":16,
 		"phonetic":"chi",
 		"hiragana":"ち",
-		"katakana":"チ",
-	},{
+		"katakana":"チ"
+	},
+	{
 		"id":17,
 		"phonetic":"tsu",
 		"hiragana":"つ",
-		"katakana":"ツ",
-	},{
+		"katakana":"ツ"
+	},
+	{
 		"id":18,
 		"phonetic":"te",
 		"hiragana":"て",
-		"katakana":"テ",
-	},{
+		"katakana":"テ"
+	},
+	{
 		"id":19,
 		"phonetic":"to",
 		"hiragana":"と",
-		"katakana":"ト",
-	},{
+		"katakana":"ト"
+	},
+	{
 		"id":20,
 		"phonetic":"na",
 		"hiragana":"な",
-		"katakana":"ナ",
-	},{
+		"katakana":"ナ"
+	},
+	{
 		"id":21,
 		"phonetic":"ni",
 		"hiragana":"に",
-		"katakana":"ニ",
-	},{
+		"katakana":"ニ"
+	},
+	{
 		"id":22,
 		"phonetic":"nu",
 		"hiragana":"ぬ",
-		"katakana":"ヌ",
-	},{
+		"katakana":"ヌ"
+	},
+	{
 		"id":23,
 		"phonetic":"ne",
 		"hiragana":"ね",
-		"katakana":"ネ",
-	},{
+		"katakana":"ネ"
+	},
+	{
 		"id":24,
 		"phonetic":"no",
 		"hiragana":"の",
-		"katakana":"ノ",
-	},{
+		"katakana":"ノ"
+	},
+	{
 		"id":25,
 		"phonetic":"ha",
 		"hiragana":"は",
-		"katakana":"ハ",
-	},{
+		"katakana":"ハ"
+	},
+	{
 		"id":26,
 		"phonetic":"hi",
 		"hiragana":"ひ",
-		"katakana":"ヒ",
-	},{
+		"katakana":"ヒ"
+	},
+	{
 		"id":27,
 		"phonetic":"fu",
 		"hiragana":"ふ",
-		"katakana":"フ",
-	},{
+		"katakana":"フ"
+	},
+	{
 		"id":28,
 		"phonetic":"he",
 		"hiragana":"へ",
-		"katakana":"ヘ",
-	},{
+		"katakana":"ヘ"
+	},
+	{
 		"id":29,
 		"phonetic":"ho",
 		"hiragana":"ほ",
-		"katakana":"ホ",
-	},{
+		"katakana":"ホ"
+	},
+	{
 		"id":30,
 		"phonetic":"ma",
 		"hiragana":"ま",
-		"katakana":"マ",
-	},{
+		"katakana":"マ"
+	},
+	{
 		"id":31,
 		"phonetic":"mi",
 		"hiragana":"み",
-		"katakana":"ミ",
-	},{
+		"katakana":"ミ"
+	},
+	{
 		"id":32,
 		"phonetic":"mu",
 		"hiragana":"む",
-		"katakana":"ム",
-	},{
+		"katakana":"ム"
+	},
+	{
 		"id":33,
 		"phonetic":"me",
 		"hiragana":"め",
-		"katakana":"メ",
-	},{
+		"katakana":"メ"
+	},
+	{
 		"id":34,
 		"phonetic":"mo",
 		"hiragana":"も",
-		"katakana":"モ",
-	},{
+		"katakana":"モ"
+	},
+	{
 		"id":35,
 		"phonetic":"ya",
 		"hiragana":"や",
-		"katakana":"ヤ",
-	},{
+		"katakana":"ヤ"
+	},
+	{
 		"id":36,
 		"phonetic":"yu",
 		"hiragana":"ゆ",
-		"katakana":"ユ",
-	},{
+		"katakana":"ユ"
+	},
+	{
 		"id":37,
 		"phonetic":"yo",
 		"hiragana":"よ",
-		"katakana":"ヨ",
-	},{
+		"katakana":"ヨ"
+	},
+	{
 		"id":38,
 		"phonetic":"ra",
 		"hiragana":"ら",
-		"katakana":"ラ",
-	},{
+		"katakana":"ラ"
+	},
+	{
 		"id":39,
 		"phonetic":"ri",
 		"hiragana":"り",
-		"katakana":"リ",
-	},{
+		"katakana":"リ"
+	},
+	{
 		"id":40,
 		"phonetic":"ru",
 		"hiragana":"る",
-		"katakana":"ル",
-	},{
+		"katakana":"ル"
+	},
+	{
 		"id":41,
 		"phonetic":"re",
 		"hiragana":"れ",
-		"katakana":"レ",
-	},{
+		"katakana":"レ"
+	},
+	{
 		"id":42,
 		"phonetic":"ro",
 		"hiragana":"ろ",
-		"katakana":"ロ",
-	},{
+		"katakana":"ロ"
+	},
+	{
 		"id":43,
 		"phonetic":"wa",
 		"hiragana":"わ",
-		"katakana":"ワ",
-	},{
+		"katakana":"ワ"
+	},
+	{
 		"id":44,
 		"phonetic":"wo",
 		"hiragana":"を",
-		"katakana":"ヲ",
-	},{
+		"katakana":"ヲ"
+	},
+	{
 		"id":45,
 		"phonetic":"n",
 		"hiragana":"ん",
-		"katakana":"ン",
-	},{
+		"katakana":"ン"
+	},
+	{
 		"id":46,
 		"phonetic":"ga",
 		"hiragana":"が",
-		"katakana":"ガ",
-	},{
+		"katakana":"ガ"
+	},
+	{
 		"id":47,
 		"phonetic":"gi",
 		"hiragana":"ぎ",
-		"katakana":"ギ",
-	},{
+		"katakana":"ギ"
+	},
+	{
 		"id":48,
 		"phonetic":"gu",
 		"hiragana":"ぐ",
-		"katakana":"グ",
-	},{
+		"katakana":"グ"
+	},
+	{
 		"id":49,
 		"phonetic":"ge",
 		"hiragana":"げ",
-		"katakana":"ゲ",
-	},{
+		"katakana":"ゲ"
+	},
+	{
 		"id":50,
 		"phonetic":"go",
 		"hiragana":"ご",
-		"katakana":"ゴ",
-	},{
+		"katakana":"ゴ"
+	},
+	{
 		"id":51,
 		"phonetic":"za",
 		"hiragana":"ざ",
-		"katakana":"ザ",
-	},{
+		"katakana":"ザ"
+	},
+	{
 		"id":52,
 		"phonetic":"ji",
 		"hiragana":"じ",
-		"katakana":"ジ",
-	},{
+		"katakana":"ジ"
+	},
+	{
 		"id":53,
 		"phonetic":"zu",
 		"hiragana":"ず",
-		"katakana":"ズ",
-	},{
+		"katakana":"ズ"
+	},
+	{
 		"id":54,
 		"phonetic":"ze",
 		"hiragana":"ぜ",
-		"katakana":"ゼ",
-	},{
+		"katakana":"ゼ"
+	},
+	{
 		"id":55,
 		"phonetic":"zo",
 		"hiragana":"ぞ",
-		"katakana":"ゾ",
-	},{
+		"katakana":"ゾ"
+	},
+	{
 		"id":56,
 		"phonetic":"da",
 		"hiragana":"だ",
-		"katakana":"ダ",
-	},{
+		"katakana":"ダ"
+	},
+	{
 		"id":57,
 		"phonetic":"ji",
 		"hiragana":"ぢ",
-		"katakana":"ヂ",
-	},{
+		"katakana":"ヂ"
+	},
+	{
 		"id":58,
 		"phonetic":"zu",
 		"hiragana":"づ",
-		"katakana":"ヅ",
-	},{
+		"katakana":"ヅ"
+	},
+	{
 		"id":59,
 		"phonetic":"de",
 		"hiragana":"で",
-		"katakana":"デ",
-	},{
+		"katakana":"デ"
+	},
+	{
 		"id":60,
 		"phonetic":"do",
 		"hiragana":"ど",
-		"katakana":"ド",
-	},{
+		"katakana":"ド"
+	},
+	{
 		"id":61,
 		"phonetic":"ba",
 		"hiragana":"ば",
-		"katakana":"バ",
-	},{
+		"katakana":"バ"
+	},
+	{
 		"id":62,
 		"phonetic":"bi",
 		"hiragana":"び",
-		"katakana":"ビ",
-	},{
+		"katakana":"ビ"
+	},
+	{
 		"id":63,
 		"phonetic":"bu",
 		"hiragana":"ぶ",
-		"katakana":"ブ",
-	},{
+		"katakana":"ブ"
+	},
+	{
 		"id":64,
 		"phonetic":"be",
 		"hiragana":"べ",
-		"katakana":"ベ",
-	},{
+		"katakana":"ベ"
+	},
+	{
 		"id":65,
 		"phonetic":"bo",
 		"hiragana":"ぼ",
-		"katakana":"ボ",
-	},{
+		"katakana":"ボ"
+	},
+	{
 		"id":66,
 		"phonetic":"pa",
 		"hiragana":"ぱ",
-		"katakana":"パ",
-	},{
+		"katakana":"パ"
+	},
+	{
 		"id":67,
 		"phonetic":"pi",
 		"hiragana":"ぴ",
-		"katakana":"ピ",
-	},{
+		"katakana":"ピ"
+	},
+	{
 		"id":68,
 		"phonetic":"pu",
 		"hiragana":"ぷ",
-		"katakana":"プ",
-	},{
+		"katakana":"プ"
+	},
+	{
 		"id":69,
 		"phonetic":"pe",
 		"hiragana":"ぺ",
-		"katakana":"ペ",
-	},{
+		"katakana":"ペ"
+	},
+	{
 		"id":70,
 		"phonetic":"po",
 		"hiragana":"ぽ",
-		"katakana":"ポ",
+		"katakana":"ポ"
 	}
 ]

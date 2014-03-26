@@ -1,0 +1,156 @@
+[
+	{
+		"id":0,
+		"symbolIds":[0, 1],
+		"english":["love"],
+		"hiragana":"あい",
+		"katakana":"アイ"
+	},
+	{
+		"id":1,
+		"symbolIds":[2, 3],
+		"english":["above", "top"],
+		"hiragana":"うえ",
+		"katakana":"ウエ"
+	},
+	{
+		"id":2,
+		"symbolIds":[4, 5],
+		"english":["hill"],
+		"hiragana":"おか",
+		"katakana":""
+	},
+	{
+		"id":3,
+		"symbolIds":[6, 7],
+		"english":["hear", "ask", "chrysanthemum"],
+		"hiragana":"きく",
+		"katakana":""
+	},
+	{
+		"id":4,
+		"symbolIds":[9, 8],
+		"english":["moss"],
+		"hiragana":"こけ",
+		"katakana":""
+	},
+	{
+		"id":5,
+		"symbolIds":[1, 8],
+		"english":["pond"],
+		"hiragana":"いけ",
+		"katakana":""
+	},
+	{
+		"id":6,
+		"symbolIds":[5, 2],
+		"english":["buy"],
+		"hiragana":"かう",
+		"katakana":""
+	},
+	{
+		"id":7,
+		"symbolIds":[3, 6],
+		"english":["station"],
+		"hiragana":"えき",
+		"katakana":""
+	},
+	{
+		"id":8,
+		"symbolIds":[1, 7],
+		"english":["go"],
+		"hiragana":"いく",
+		"katakana":""
+	},
+	{
+		"id":9,
+		"symbolIds":[9, 9],
+		"english":["here"],
+		"hiragana":"ここ",
+		"katakana":""
+	},
+	{
+		"id":10,
+		"symbolIds":[0, 2],
+		"english":["meet"],
+		"hiragana":"あう",
+		"katakana":""
+	},
+	{
+		"id":11,
+		"symbolIds":[9, 3],
+		"english":["voice"],
+		"hiragana":"こえ",
+		"katakana":""
+	},
+	{
+		"id":12,
+		"symbolIds":[5, 7],
+		"english":["write"],
+		"hiragana":"かく",
+		"katakana":""
+	},
+	{
+		"id":13,
+		"symbolIds":[4, 8],
+		"english":["wooden bucket"],
+		"hiragana":"おけ",
+		"katakana":""
+	},
+	{
+		"id":14,
+		"symbolIds":[5, 4],
+		"english":["face", "honor"],
+		"hiragana":"かお",
+		"katakana":""
+	},
+	{
+		"id":15,
+		"symbolIds":[1, 3],
+		"english":["house", "extended family"],
+		"hiragana":"いえ",
+		"katakana":""
+	},
+	{
+		"id":16,
+		"symbolIds":[0, 6],
+		"english":["autumn"],
+		"hiragana":"あき",
+		"katakana":""
+	},
+	{
+		"id":17,
+		"symbolIds":[1, 2],
+		"english":["say"],
+		"hiragana":"いう",
+		"katakana":""
+	},
+	{
+		"id":18,
+		"symbolIds":[0, 5, 1],
+		"english":["red"],
+		"hiragana":"あかい",
+		"katakana":""
+	},
+	{
+		"id":19,
+		"symbolIds":[0, 4, 1],
+		"english":["blue"],
+		"hiragana":"あおい",
+		"katakana":""
+	},
+	{
+		"id":20,
+		"symbolIds":[6, 4, 7],
+		"english":["memory"],
+		"hiragana":"きおく",
+		"katakana":""
+	},
+	{
+		"id":21,
+		"symbolIds":[3, 5, 6],
+		"english":["painter"],
+		"hiragana":"えかき",
+		"katakana":""
+	}
+]
