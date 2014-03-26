@@ -10,6 +10,8 @@
 		6BB2CCB218DF857C00E364AD /* KQAnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */; };
 		6BB39FE818E257E800561C5C /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB39FE718E257E800561C5C /* Word.m */; };
 		6BB39FEA18E2636200561C5C /* Words.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BB39FE918E2636200561C5C /* Words.json */; };
+		6BBFBEF918E283650000D674 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBFBEF718E283650000D674 /* icon.png */; };
+		6BBFBEFA18E283650000D674 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBFBEF818E283650000D674 /* icon@2x.png */; };
 		6BDC2EBA18DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */; };
 		6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */; };
 		6BEAC6EC18DBBB2800175232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EB18DBBB2800175232 /* Foundation.framework */; };
@@ -53,6 +55,8 @@
 		6BB39FE618E257E800561C5C /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = Classes/Models/Word.h; sourceTree = "<group>"; };
 		6BB39FE718E257E800561C5C /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = Classes/Models/Word.m; sourceTree = "<group>"; };
 		6BB39FE918E2636200561C5C /* Words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Words.json; sourceTree = "<group>"; };
+		6BBFBEF718E283650000D674 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6BBFBEF818E283650000D674 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSymbolSettingsCollectionViewCell.h; path = Classes/Views/KQSymbolSettingsCollectionViewCell.h; sourceTree = "<group>"; };
 		6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSymbolSettingsCollectionViewCell.m; path = Classes/Views/KQSymbolSettingsCollectionViewCell.m; sourceTree = "<group>"; };
 		6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KQSymbolSettingsCollectionViewCell.xib; path = "Interface Builder/KQSymbolSettingsCollectionViewCell.xib"; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 		6BEAC6F218DBBB2800175232 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BBFBEF718E283650000D674 /* icon.png */,
+				6BBFBEF818E283650000D674 /* icon@2x.png */,
 				6BEAC6F318DBBB2800175232 /* HiraKataQuiz-Info.plist */,
 				6BEAC6F418DBBB2800175232 /* InfoPlist.strings */,
 				6BEAC6F718DBBB2800175232 /* main.m */,
@@ -375,9 +381,11 @@
 				6BB39FEA18E2636200561C5C /* Words.json in Resources */,
 				6BEAC70718DBBB2800175232 /* Images.xcassets in Resources */,
 				6BEAC6FF18DBBB2800175232 /* Main_iPhone.storyboard in Resources */,
+				6BBFBEF918E283650000D674 /* icon.png in Resources */,
 				6BEAC6F618DBBB2800175232 /* InfoPlist.strings in Resources */,
 				6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */,
 				6BEAC74418DBC47500175232 /* Symbols.json in Resources */,
+				6BBFBEFA18E283650000D674 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
