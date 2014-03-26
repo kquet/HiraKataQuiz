@@ -11,6 +11,9 @@
 @interface Symbol ()
 
 @property (nonatomic) NSNumber *symbolId;
+@property (nonatomic, strong) NSString *phonetic;
+@property (nonatomic, strong) NSString *hiragana;
+@property (nonatomic, strong) NSString *katakana;
 
 @end
 
@@ -46,9 +49,25 @@
     return self;
 }
 
+#pragma mark - Get Methods
+
 - (NSNumber *)getSymbolId {
     return self.symbolId;
 }
+
+- (NSString *)getPhonetic {
+    return self.phonetic;
+}
+
+- (NSString *)getHiragana {
+    return self.hiragana;
+}
+
+- (NSString *)getKatakana {
+    return self.katakana;
+}
+
+#pragma mark - Quiz Methods
 
 -(NSString *)getSolutionStringForQuizType:(QuizType)quizType {
     NSString *solutionString;

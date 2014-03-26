@@ -33,9 +33,9 @@
 -(void)configureCellForSymbol:(Symbol *)symbol {
     self.backgroundColor = [UIColor whiteColor];
     
-    self.phoneticLabel.text = symbol.phonetic;
-    self.hiraganaLabel.text = symbol.hiragana;
-    self.katakanaLabel.text = symbol.katakana;
+    self.phoneticLabel.text = [symbol getPhonetic];
+    self.hiraganaLabel.text = [symbol getHiragana];
+    self.katakanaLabel.text = [symbol getKatakana];
 }
 
 - (void)setSelected:(BOOL)selected {

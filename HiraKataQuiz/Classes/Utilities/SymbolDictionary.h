@@ -11,7 +11,8 @@
 
 @interface SymbolDictionary : NSObject
 
-+ (NSArray *)generateSymbolsArray;
++ (NSArray *)generateSymbolArray;
 + (NSArray *)generateQuizArray;
++ (NSArray *)generateWordArray;
 
 @end

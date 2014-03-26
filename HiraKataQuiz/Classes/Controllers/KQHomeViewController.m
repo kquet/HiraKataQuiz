@@ -21,6 +21,7 @@ static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
 
 // TODO: Refactor these to their own controllers
 @property (nonatomic, strong) NSArray *symbolsArray;
+@property (nonatomic, strong) NSArray *wordsArray;
 @property (nonatomic, strong) NSArray *quizSelectSymbolsArray;
 
 @end
@@ -32,8 +33,11 @@ static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
     [super viewDidLoad];
     [self checkUserDefaults];
     
-    self.symbolsArray = [SymbolDictionary generateSymbolsArray];
+    self.symbolsArray = [SymbolDictionary generateSymbolArray];
+    self.wordsArray = [SymbolDictionary generateWordArray];
     self.quizSelectSymbolsArray = [SymbolDictionary generateQuizArray];
+    
+    NSLog(@"%@", self.wordsArray);
 }
 
 

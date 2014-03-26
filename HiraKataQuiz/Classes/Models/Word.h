@@ -10,4 +10,11 @@
 
 @interface Word : NSObject
 
+- (id)initWithWordDictionary:(NSMutableDictionary *)dictionary;
+
+- (NSNumber *)getWordId;
+- (NSString *)getEnglish;
+- (NSString *)getHiragana;
+- (NSString *)getKatakana;
+
 @end

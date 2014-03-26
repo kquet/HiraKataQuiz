@@ -17,12 +17,13 @@ typedef enum {
 
 @interface Symbol : NSObject
 
-@property (nonatomic, strong) NSString *phonetic;
-@property (nonatomic, strong) NSString *hiragana;
-@property (nonatomic, strong) NSString *katakana;
-
 - (id)initWithSymbolDictionary:(NSMutableDictionary *)dictionary;
+
 - (NSNumber *)getSymbolId;
+- (NSString *)getPhonetic;
+- (NSString *)getHiragana;
+- (NSString *)getKatakana;
+
 - (NSString *)getSolutionStringForQuizType:(QuizType)quizType;
 - (NSString *)getAnswerStringForQuizType:(QuizType)quizType;
 
