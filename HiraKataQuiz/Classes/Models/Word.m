@@ -12,7 +12,7 @@
 
 @property (nonatomic) NSNumber *wordId;
 @property (nonatomic, strong) NSArray *symbolIds;
-@property (nonatomic, strong) NSString *english;
+@property (nonatomic, strong) NSArray *english;
 @property (nonatomic, strong) NSString *hiragana;
 @property (nonatomic, strong) NSString *katakana;
 
@@ -62,7 +62,7 @@
     return self.wordId;
 }
 
-- (NSString *)getEnglish {
+- (NSArray *)getEnglish {
     return self.english;
 }
 

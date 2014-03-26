@@ -36,8 +36,6 @@ static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
     self.symbolsArray = [SymbolDictionary generateSymbolArray];
     self.wordsArray = [SymbolDictionary generateWordArray];
     self.quizSelectSymbolsArray = [SymbolDictionary generateQuizArray];
-    
-    NSLog(@"%@", self.wordsArray);
 }
 
 
