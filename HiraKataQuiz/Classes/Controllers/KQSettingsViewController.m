@@ -8,14 +8,18 @@
 
 #import "KQSettingsViewController.h"
 #import "KQSymbolSettingsCollectionViewCell.h"
+#import "SymbolDictionary.h"
 #import "Symbol.h"
 
 static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollectionViewCell";
 static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelectionHeaderIdentifier";
+static NSString *const UserDefaultsSelectedSetIdentifier = @"selectedSet";
 
 @interface KQSettingsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *characterSetCollectionView;
+@property (nonatomic, weak) SymbolDictionary *symbolDictionary;
+
+@property (nonatomic, weak) IBOutlet UICollectionView *characterSetCollectionView;
 @property (nonatomic, strong) NSArray *userSelectedCharacterDefaults;
 
 @end
@@ -23,6 +27,10 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
 @implementation KQSettingsViewController
 
 -(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.symbolDictionary = [SymbolDictionary sharedManager];
+    
     [self.characterSetCollectionView registerNib:[UINib nibWithNibName:CharacterCellReuseIdentifier bundle:nil] forCellWithReuseIdentifier:CharacterCellReuseIdentifier];
     self.characterSetCollectionView.allowsMultipleSelection = YES;
     
@@ -32,7 +40,7 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
 #pragma mark - NSUserDefaults
 
 - (void)retrieveUserDefaults {
-    self.userSelectedCharacterDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:@"selectedSet"];
+    self.userSelectedCharacterDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:UserDefaultsSelectedSetIdentifier];
 }
 
 - (void)saveUserDefaultsSelectionArray:(NSArray *)selection {
@@ -40,7 +48,7 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
     for (NSIndexPath *indexPath in selection) {
         [indexArray addObject:[[NSNumber alloc] initWithInteger:indexPath.item]];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:@"selectedSet"];
+    [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:UserDefaultsSelectedSetIdentifier];
     
     [self retrieveUserDefaults];
 }
@@ -48,7 +56,7 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
 #pragma mark - UICollectionViewDataSource
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.symbolsArray count];
+    return [self.symbolDictionary.symbolArray count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -59,16 +67,13 @@ static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelection
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CharacterSelectionHeaderIdentifier forIndexPath:indexPath];
-    
     return headerView;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     KQSymbolSettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CharacterCellReuseIdentifier forIndexPath:indexPath];
-    [cell configureCellForSymbol:self.symbolsArray[indexPath.item]];
-    
-    // TODO: Issues where the selected items do not appear as selected without collectionview being scrolled by user
-    if ([self.userSelectedCharacterDefaults containsObject:[self.symbolsArray[indexPath.item] getSymbolId]]) {
+    [cell configureCellForSymbol:self.symbolDictionary.symbolArray[indexPath.item]];
+    if ([self.userSelectedCharacterDefaults containsObject:[self.symbolDictionary.symbolArray[indexPath.item] getSymbolId]]) {
         [cell setSelected:YES];
         [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     }

@@ -13,6 +13,7 @@
 		6BB39FEA18E2636200561C5C /* Words.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BB39FE918E2636200561C5C /* Words.json */; };
 		6BDC2EBA18DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */; };
 		6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */; };
+		6BE6F5B018E51E5E006325C0 /* WordDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6F5AF18E51E5E006325C0 /* WordDictionary.m */; };
 		6BEAC6EC18DBBB2800175232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EB18DBBB2800175232 /* Foundation.framework */; };
 		6BEAC6EE18DBBB2800175232 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6ED18DBBB2800175232 /* CoreGraphics.framework */; };
 		6BEAC6F018DBBB2800175232 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BEAC6EF18DBBB2800175232 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		6BDC2EB818DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQSymbolSettingsCollectionViewCell.h; path = Classes/Views/KQSymbolSettingsCollectionViewCell.h; sourceTree = "<group>"; };
 		6BDC2EB918DE78EA00FC0413 /* KQSymbolSettingsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQSymbolSettingsCollectionViewCell.m; path = Classes/Views/KQSymbolSettingsCollectionViewCell.m; sourceTree = "<group>"; };
 		6BDC2EBD18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KQSymbolSettingsCollectionViewCell.xib; path = "Interface Builder/KQSymbolSettingsCollectionViewCell.xib"; sourceTree = "<group>"; };
+		6BE6F5AE18E51E5E006325C0 /* WordDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordDictionary.h; path = Classes/Utilities/WordDictionary.h; sourceTree = "<group>"; };
+		6BE6F5AF18E51E5E006325C0 /* WordDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordDictionary.m; path = Classes/Utilities/WordDictionary.m; sourceTree = "<group>"; };
 		6BEAC6E818DBBB2800175232 /* HiraKataQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiraKataQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BEAC6EB18DBBB2800175232 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6BEAC6ED18DBBB2800175232 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -280,8 +283,6 @@
 				6BEAC73718DBC04200175232 /* Colour.m */,
 				6BEAC73918DBC05E00175232 /* Font.h */,
 				6BEAC73A18DBC05E00175232 /* Font.m */,
-				6BEAC74018DBC3F400175232 /* SymbolDictionary.h */,
-				6BEAC74118DBC3F400175232 /* SymbolDictionary.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -289,6 +290,10 @@
 		6BEAC72C18DBBD3100175232 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6BEAC74018DBC3F400175232 /* SymbolDictionary.h */,
+				6BEAC74118DBC3F400175232 /* SymbolDictionary.m */,
+				6BE6F5AE18E51E5E006325C0 /* WordDictionary.h */,
+				6BE6F5AF18E51E5E006325C0 /* WordDictionary.m */,
 				6BEAC73C18DBC33400175232 /* Symbol.h */,
 				6BEAC73D18DBC33400175232 /* Symbol.m */,
 				6BB39FE618E257E800561C5C /* Word.h */,
@@ -409,6 +414,7 @@
 				6BEAC72F18DBBD6900175232 /* KQMultipleChoiceViewController.m in Sources */,
 				6BEAC74218DBC3F400175232 /* SymbolDictionary.m in Sources */,
 				6BB2CCB218DF857C00E364AD /* KQAnswerButton.m in Sources */,
+				6BE6F5B018E51E5E006325C0 /* WordDictionary.m in Sources */,
 				6BEAC6F818DBBB2800175232 /* main.m in Sources */,
 				6BEAC74718DBDA3C00175232 /* KQMultipleChoiceView.m in Sources */,
 				6BEAC73B18DBC05E00175232 /* Font.m in Sources */,

@@ -8,37 +8,59 @@
 
 #import "SymbolDictionary.h"
 #import "Symbol.h"
-#import "Word.h"
 
 static NSString *const SymbolsJsonFileName = @"Symbols";
-static NSString *const WordsJsonFileName = @"Words";
 
 @implementation SymbolDictionary
 
-+ (NSArray *)getJsonDataArrayFromFileWithName:(NSString *)filename {
++ (id)sharedManager {
+    static SymbolDictionary *sharedSymbolDictionary = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sharedSymbolDictionary = [[self alloc] init];
+    });
+    
+    return sharedSymbolDictionary;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        [self generateSymbolArray];
+        [self generateQuizArray];
+    }
+    return  self;
+}
+
+- (void)update {
+    [self generateSymbolArray];
+    [self generateQuizArray];
+}
+
+- (NSArray *)getJsonDataArrayFromFileWithName:(NSString *)filename {
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:jsonFilePath];
     return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
 }
 
-+ (NSArray *)generateSymbolArray {
+- (void)generateSymbolArray {
     NSMutableArray *symbolsArray = [[NSMutableArray alloc] init];
     
-    NSArray *symbolsJson = [[self class] getJsonDataArrayFromFileWithName:SymbolsJsonFileName];
+    NSArray *symbolsJson = [self getJsonDataArrayFromFileWithName:SymbolsJsonFileName];
     
     for (NSMutableDictionary *symbolItem in symbolsJson) {
         Symbol *symbol = [[Symbol alloc] initWithSymbolDictionary:symbolItem];
         [symbolsArray addObject:symbol];
     }
     
-    return [symbolsArray copy];
+    self.symbolArray =  [symbolsArray copy];
 }
 
-+ (NSArray *)generateQuizArray {
+- (void)generateQuizArray {
     NSArray *userDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:@"selectedSet"];
     NSMutableArray *symbolsArray = [[NSMutableArray alloc] init];
     
-    NSArray *symbolsJson = [[self class] getJsonDataArrayFromFileWithName:SymbolsJsonFileName];
+    NSArray *symbolsJson = [self getJsonDataArrayFromFileWithName:SymbolsJsonFileName];
     
     for (NSMutableDictionary *symbolItem in symbolsJson) {
         if ([userDefaults containsObject:symbolItem[@"id"]]) {
@@ -47,20 +69,7 @@ static NSString *const WordsJsonFileName = @"Words";
         }
     }
     
-    return [symbolsArray copy];
-}
-
-+ (NSArray *)generateWordArray {
-    NSMutableArray *wordsArray = [[NSMutableArray alloc] init];
-    
-    NSArray *wordsJson = [[self class] getJsonDataArrayFromFileWithName:WordsJsonFileName];
-    
-    for (NSMutableDictionary *wordItem in wordsJson) {
-        Word *word = [[Word alloc] initWithWordDictionary:wordItem];
-        [wordsArray addObject:word];
-    }
-    
-    return [wordsJson copy];
+    self.symbolQuizArray = [symbolsArray copy];
 }
 
 @end

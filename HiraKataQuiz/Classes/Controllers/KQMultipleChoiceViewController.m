@@ -11,10 +11,13 @@
 #import "SymbolDictionary.h"
 #import "KQAnswerButton.h"
 
+// TODO: Implement score/timer class for reuse
 static NSTimeInterval const countdownTimeInterval = 1;
 static NSInteger const countdownTime = 10;
 
 @interface KQMultipleChoiceViewController ()
+
+@property (nonatomic, weak) SymbolDictionary *symbolDictionary;
 
 @property (nonatomic, strong) IBOutlet KQMultipleChoiceView *multipleChoiceView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *kanaTypeSegmentedControl;
@@ -39,6 +42,9 @@ static NSInteger const countdownTime = 10;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.symbolDictionary = [SymbolDictionary sharedManager];
+    
     [self.kanaTypeSegmentedControl setSelectedSegmentIndex:0];
     self.quizScore = 0;
     [self generateQuestion];
@@ -49,11 +55,6 @@ static NSInteger const countdownTime = 10;
 }
 
 - (void)generateQuestion {
-    // TODO: Refactor for better error handling
-    if ([self.symbolsArray count] < 1) {
-        return;
-    }
-    
     [self resetTimer];
     
     self.answerIndex = arc4random() % 4;
@@ -62,7 +63,7 @@ static NSInteger const countdownTime = 10;
     NSMutableArray *answerArray = [[NSMutableArray alloc] init];
     
     while ([answerArray count] < 4) {
-        Symbol *symbol = [self.symbolsArray objectAtIndex:(arc4random() % [self.symbolsArray count])];
+        Symbol *symbol = [self.symbolDictionary.symbolQuizArray objectAtIndex:(arc4random() % [self.symbolDictionary.symbolQuizArray count])];
         answerString = [symbol getAnswerStringForQuizType:self.quizType];
         
         if(![answerArray containsObject:answerString]) {
@@ -73,7 +74,7 @@ static NSInteger const countdownTime = 10;
         }
     }
     
-    [self.multipleChoiceView configureQuestion:solutionString withAnswers:[answerArray copy]];
+    [self.multipleChoiceView configureSymbolQuestion:solutionString withAnswers:[answerArray copy] forQuizType:QuizViewTypeSymbols];
     self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:countdownTimeInterval target:self selector:@selector(countdownTick) userInfo:nil repeats:YES];
 }
 

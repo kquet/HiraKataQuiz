@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface SymbolDictionary : NSObject
 
-+ (NSArray *)generateSymbolArray;
-+ (NSArray *)generateQuizArray;
-+ (NSArray *)generateWordArray;
+@property (nonatomic, strong) NSArray *symbolArray;
+@property (nonatomic, strong) NSArray *symbolQuizArray;
+
++ (id)sharedManager;
+- (void)update;
 
 @end

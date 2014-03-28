@@ -11,7 +11,6 @@
 
 @interface KQMultipleChoiceViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *symbolsArray;
 @property (nonatomic) QuizType quizType;
 
 @end

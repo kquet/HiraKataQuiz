@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class Word;
+
+typedef enum {
+    QuizViewTypeSymbols,
+    QuizViewTypeWords,
+} QuizViewType;
+
 @interface KQMultipleChoiceView : UIView
 
-- (void)configureQuestion:(NSString *)question withAnswers:(NSArray *)answers;
+- (void)configureSymbolQuestion:(NSString *)question withAnswers:(NSArray *)answers forQuizType:(QuizViewType)quizType;
+
 - (void)updateClockWithTime:(NSInteger)countdownTime;
 - (void)updateScoreWithScore:(NSInteger)score withIncrease:(NSInteger)increased;
 

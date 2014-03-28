@@ -13,6 +13,7 @@
 - (id)initWithWordDictionary:(NSMutableDictionary *)dictionary;
 
 - (NSNumber *)getWordId;
+- (NSArray *)getSymbolIds;
 - (NSArray *)getEnglish;
 - (NSString *)getHiragana;
 - (NSString *)getKatakana;

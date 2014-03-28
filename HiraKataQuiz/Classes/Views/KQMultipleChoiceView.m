@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *clueImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonA;
 @property (weak, nonatomic) IBOutlet UIButton *answerButtonB;
@@ -38,17 +39,32 @@
     return self;
 }
 
-- (void)configureQuestion:(NSString *)question withAnswers:(NSArray *)answers {
-    UIButton *button;
-    
-    // TODO: Test use of IBCollection
+// TODO: Refactor to take in symbol Ids for question and answers
+- (void)configureSymbolQuestion:(NSString *)question withAnswers:(NSArray *)answers forQuizType:(QuizViewType)quizType {
+    // TODO: Refactor place in init
     NSArray *answerButtons = [NSArray arrayWithObjects:
-                          self.answerButtonA,
-                          self.answerButtonB,
-                          self.answerButtonC,
-                          self.answerButtonD, nil];
+                              self.answerButtonA,
+                              self.answerButtonB,
+                              self.answerButtonC,
+                              self.answerButtonD, nil];
     
-    self.clueLabel.text = question;
+    switch (quizType) {
+        case QuizViewTypeSymbols:
+            [self.clueLabel setHidden:NO];
+            [self.clueImage setHidden:YES];
+            
+            self.clueLabel.text = question;
+            break;
+        case QuizViewTypeWords:
+            [self.clueLabel setHidden:YES];
+            [self.clueImage setHidden:NO];
+            
+            self.clueImage.image = [UIImage imageNamed:question];
+        default:
+            break;
+    }
+    
+    UIButton *button;
     for (int i = 0; i < [answers count]; i++) {
         button = (UIButton *)answerButtons[i];
         [((KQAnswerButton *)button) setEnabled:YES];

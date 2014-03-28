@@ -31,7 +31,7 @@
     
     if(dictionary[@"symbolIds"] != nil) {
         if([dictionary[@"symbolIds"] isKindOfClass:[NSArray class]]) {
-            self.wordId = dictionary[@"symbolIds"];
+            self.symbolIds = dictionary[@"symbolIds"];
         }
     }
     
@@ -60,6 +60,10 @@
 
 - (NSNumber *)getWordId {
     return self.wordId;
+}
+
+- (NSArray *)getSymbolIds {
+    return self.symbolIds;
 }
 
 - (NSArray *)getEnglish {
