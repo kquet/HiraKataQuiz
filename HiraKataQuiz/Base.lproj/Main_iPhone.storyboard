@@ -116,7 +116,7 @@
                                             <segue destination="XUb-w1-KGc" kind="push" identifier="KanaQuizSegueIdentifier" id="hX5-39-BBe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-5R-imw">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-5R-imw">
                                         <rect key="frame" x="0.0" y="182" width="320" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -312,7 +312,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC9-Yf-mDt">
-                                        <rect key="frame" x="256" y="256" width="42" height="36"/>
+                                        <rect key="frame" x="256" y="248" width="42" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Next">
@@ -324,7 +324,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wgq-fE-Muj">
-                                        <rect key="frame" x="20" y="260" width="143" height="29"/>
+                                        <rect key="frame" x="20" y="248" width="143" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <segments>
@@ -339,9 +339,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Wgq-fE-Muj" secondAttribute="bottom" constant="8" id="ANH-TI-m5h"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wgq-fE-Muj" secondAttribute="bottom" constant="20" id="ANH-TI-m5h"/>
                                     <constraint firstItem="9W6-c2-Dl4" firstAttribute="leading" secondItem="XPk-ZL-eyq" secondAttribute="leading" constant="20" id="BYl-Zu-CfA"/>
-                                    <constraint firstAttribute="bottom" secondItem="OC9-Yf-mDt" secondAttribute="bottom" constant="4" id="DmC-az-hwU"/>
+                                    <constraint firstAttribute="bottom" secondItem="OC9-Yf-mDt" secondAttribute="bottom" constant="12" id="DmC-az-hwU"/>
                                     <constraint firstAttribute="trailing" secondItem="OC9-Yf-mDt" secondAttribute="trailing" constant="22" id="PJX-AG-YjH"/>
                                     <constraint firstItem="nxF-Vq-Ub3" firstAttribute="top" secondItem="XPk-ZL-eyq" secondAttribute="top" constant="20" id="PzB-Qg-qXI"/>
                                     <constraint firstItem="9W6-c2-Dl4" firstAttribute="top" secondItem="XPk-ZL-eyq" secondAttribute="top" constant="20" id="Tz2-DT-7xS"/>
@@ -405,19 +405,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-ac-zVw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="104" maxX="0.0" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AOH-Sv-x8h">
                                     <size key="itemSize" width="92" height="44"/>
-                                    <size key="headerReferenceSize" width="50" height="148"/>
+                                    <size key="headerReferenceSize" width="50" height="104"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterSelectionHeaderIdentifier" id="McV-cc-mti">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 </collectionReusableView>
                                 <connections>
@@ -510,7 +510,7 @@
                             <constraint firstAttribute="trailing" secondItem="Bmi-vK-uST" secondAttribute="trailing" id="899-zq-Bhm"/>
                             <constraint firstItem="Bmi-vK-uST" firstAttribute="top" secondItem="dGc-qG-Kcy" secondAttribute="bottom" id="9bu-q7-W0B"/>
                             <constraint firstItem="Bmi-vK-uST" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="Vbw-be-1FO"/>
-                            <constraint firstItem="p1p-ac-zVw" firstAttribute="top" secondItem="dGc-qG-Kcy" secondAttribute="bottom" id="k0v-Pu-h3x"/>
+                            <constraint firstItem="p1p-ac-zVw" firstAttribute="top" secondItem="dGc-qG-Kcy" secondAttribute="bottom" constant="44" id="k0v-Pu-h3x"/>
                             <constraint firstAttribute="trailing" secondItem="p1p-ac-zVw" secondAttribute="trailing" id="lhX-qO-VM0"/>
                             <constraint firstItem="p1p-ac-zVw" firstAttribute="leading" secondItem="XM1-2k-xgx" secondAttribute="leading" id="sTc-Co-qPb"/>
                             <constraint firstItem="A1N-af-wVK" firstAttribute="top" secondItem="p1p-ac-zVw" secondAttribute="bottom" id="uHH-ZS-mC2"/>
