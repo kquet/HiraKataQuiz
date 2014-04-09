@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0E3-tt-frX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0E3-tt-frX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -194,6 +194,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="backButtonTapped:" destination="XUb-w1-KGc" eventType="touchUpInside" id="6ZB-h1-gmI"/>
                                             <segue destination="ial-hf-U3D" kind="unwind" unwindAction="unwindToHomeView:" id="AT5-xl-aRL"/>
                                         </connections>
                                     </button>
@@ -236,6 +237,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="oZj-61-qj4" firstAttribute="top" secondItem="jV5-a3-iT3" secondAttribute="top" constant="20" id="05r-e0-E6V"/>
                                     <constraint firstAttribute="height" constant="168" id="1vp-TF-6c1"/>
@@ -249,6 +251,9 @@
                                     <constraint firstItem="oJe-XB-MKE" firstAttribute="top" secondItem="jV5-a3-iT3" secondAttribute="top" constant="20" id="o3n-Ct-cYz"/>
                                     <constraint firstAttribute="bottom" secondItem="JM0-Zm-dK8" secondAttribute="bottom" id="xOY-58-JZp"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CUB-C4-9Tr" appends="YES" id="wya-bb-8DN"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-ZL-eyq" userLabel="Footer">
                                 <rect key="frame" x="0.0" y="272" width="320" height="296"/>
@@ -401,6 +406,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwJ-TM-VHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ial-hf-U3D" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="CUB-C4-9Tr">
+                    <connections>
+                        <action selector="speechClueTapped:" destination="XUb-w1-KGc" id="DeE-mk-IV4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1065" y="-362"/>
         </scene>
