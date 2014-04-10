@@ -70,6 +70,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
 
 #pragma mark - Question Flow
 
+// TODO: Refactor out reset
 - (void)generateQuestion {
     [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
     [self resetTimer];
@@ -131,6 +132,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
         case SolutionPhoneticAnswersKatakana:
             self.speechUtterance = [AVSpeechUtterance speechUtteranceWithString:string];
             self.speechUtterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:language];
+            self.speechUtterance.rate = AVSpeechUtteranceMinimumSpeechRate;
             [self.speechSynthesizer speakUtterance:self.speechUtterance];
             break;
         default:
