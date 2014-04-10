@@ -26,6 +26,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
 @property (nonatomic, weak) IBOutlet UISegmentedControl *kanaTypeSegmentedControl;
 
 // Speech
+@property (nonatomic, strong) NSString *solutionSpeechString;
 @property (nonatomic, strong) AVSpeechUtterance *speechUtterance;
 @property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
 
@@ -75,7 +76,6 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
     self.answerIndex = arc4random() % 4;
     
     NSString *solutionString;
-    NSString *solutionSpeechString;
     NSString *answerString;
     NSMutableArray *answerArray = [[NSMutableArray alloc] init];
     
@@ -86,7 +86,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
         if(![answerArray containsObject:answerString]) {
             if ([answerArray count] == self.answerIndex) {
                 solutionString = [symbol getSolutionStringForQuizType:self.quizType];
-                solutionSpeechString = answerString;
+                self.solutionSpeechString = answerString;
             }
             [answerArray addObject:answerString];
         }
@@ -94,7 +94,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
     
     self.answerStrings = [answerArray copy];
     [self.multipleChoiceView configureSymbolQuestion:solutionString withAnswers:self.answerStrings forQuizType:QuizViewTypeSymbols];
-    [self speechSynthesizerWithString:solutionSpeechString andLanguage:SpeechUtteranceVoiceLanguageJapanese];
+    [self speechSynthesizerWithString:self.solutionSpeechString andLanguage:SpeechUtteranceVoiceLanguageJapanese];
     self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:countdownTimeInterval target:self selector:@selector(countdownTick) userInfo:nil repeats:YES];
 }
 
@@ -165,7 +165,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
 
 - (IBAction)speechClueTapped:(id)sender {
     if (!self.speechSynthesizer.speaking) {
-        [self.speechSynthesizer speakUtterance:self.speechUtterance];
+        [self speechSynthesizerWithString:self.solutionSpeechString andLanguage:SpeechUtteranceVoiceLanguageJapanese];
     }
 }
 
