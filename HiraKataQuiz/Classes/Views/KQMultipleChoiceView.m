@@ -76,12 +76,12 @@
     self.timerLabel.text = [NSString stringWithFormat:@"%ld", (long)countdownTime];
 }
 
-- (void)updateScoreWithScore:(NSInteger)score withIncrease:(NSInteger)increased{
+- (void)updateScoreWithScore:(NSInteger)score withCorrectAnswer:(BOOL)isCorrect{
     UIColor *scoreUpdateColour = [UIColor blueColor];
     
-    if (increased > 0) {
+    if (isCorrect) {
         scoreUpdateColour = [UIColor greenColor];
-    } else if (increased < 0){
+    } else {
         scoreUpdateColour = [UIColor redColor];
     }
     

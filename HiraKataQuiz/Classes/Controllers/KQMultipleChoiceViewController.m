@@ -13,9 +13,10 @@
 #import "KQAnswerButton.h"
 
 // TODO: Implement score/timer class for reuse
-static NSTimeInterval const countdownTimeInterval = 1;
-static NSInteger const countdownTime = 10;
 static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
+static NSTimeInterval const CountdownTimeInterval = 1;
+static NSInteger const CountdownTime = 10;
+static NSInteger const ScorePenalty = 5;
 
 @interface KQMultipleChoiceViewController ()
 
@@ -65,6 +66,7 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
                           self.answerButtonC,
                           self.answerButtonD, nil];
     
+    [self resetTimer];
     [self generateQuestion];
 }
 
@@ -72,8 +74,6 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
 
 // TODO: Refactor out reset
 - (void)generateQuestion {
-    [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
-    [self resetTimer];
     self.answerIndex = arc4random() % 4;
     
     NSString *solutionString;
@@ -96,17 +96,23 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
     self.answerStrings = [answerArray copy];
     [self.multipleChoiceView configureSymbolQuestion:solutionString withAnswers:self.answerStrings forQuizType:QuizViewTypeSymbols];
     [self speechSynthesizerWithString:self.solutionSpeechString andLanguage:SpeechUtteranceVoiceLanguageJapanese];
-    self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:countdownTimeInterval target:self selector:@selector(countdownTick) userInfo:nil repeats:YES];
+    self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:CountdownTimeInterval target:self selector:@selector(countdownTick) userInfo:nil repeats:YES];
 }
 
 - (void)resetTimer {
     [self.countdownTimer invalidate];
     self.countdownTimer = nil;
-    
-    [self updateScoreWithPoints:self.countdownTime];
-    
-    self.countdownTime = countdownTime;
+    self.countdownTime = CountdownTime;
     [self.multipleChoiceView updateClockWithTime:self.countdownTime];
+}
+
+- (void)updateScoreWithCorrectAnswer:(BOOL)isCorrect {
+    if (isCorrect) {
+        self.quizScore += self.countdownTime;
+    } else {
+        self.quizScore -= ScorePenalty;
+    }
+    [self.multipleChoiceView updateScoreWithScore:self.quizScore withCorrectAnswer:isCorrect];
 }
 
 - (void)countdownTick {
@@ -114,14 +120,11 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
         self.countdownTime -= 1;
         [self.multipleChoiceView updateClockWithTime:self.countdownTime];
     } else {
-        [self updateScoreWithPoints:-5];
+        [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+        [self updateScoreWithCorrectAnswer:NO];
+        [self resetTimer];
         [self generateQuestion];
     }
-}
-
-- (void)updateScoreWithPoints:(NSInteger)points {
-    self.quizScore += points;
-    [self.multipleChoiceView updateScoreWithScore:self.quizScore withIncrease:points];
 }
 
 #pragma mark - AVSpeechSynthesizer
@@ -146,16 +149,18 @@ static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
     NSUInteger tappedButtonIndex = [self.answerButtons indexOfObject:sender];
     
     if (tappedButtonIndex == self.answerIndex) {
+        [self updateScoreWithCorrectAnswer:YES];
+        [self resetTimer];
         [self generateQuestion];
     } else {
         [((UIButton *)sender) setEnabled:NO];
-        [self updateScoreWithPoints:-5];
+        [self updateScoreWithCorrectAnswer:NO];
         [self speechSynthesizerWithString:[self.answerStrings objectAtIndex:tappedButtonIndex] andLanguage:SpeechUtteranceVoiceLanguageJapanese];
     }
 }
 
 - (IBAction)nextQuestionButtonTapped:(id)sender {
-    self.countdownTime = 0;
+    [self resetTimer];
     [self generateQuestion];
 }
 

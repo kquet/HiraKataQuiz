@@ -20,6 +20,6 @@ typedef enum {
 - (void)configureSymbolQuestion:(NSString *)question withAnswers:(NSArray *)answers forQuizType:(QuizViewType)quizType;
 
 - (void)updateClockWithTime:(NSInteger)countdownTime;
-- (void)updateScoreWithScore:(NSInteger)score withIncrease:(NSInteger)increased;
+- (void)updateScoreWithScore:(NSInteger)score withCorrectAnswer:(BOOL)isCorrect;
 
 @end
