@@ -25,6 +25,10 @@ static NSInteger const ScorePenalty = 5;
 // View
 @property (nonatomic, weak) IBOutlet KQMultipleChoiceView *multipleChoiceView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *kanaTypeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *showClueSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIImageView *audioImageView;
+@property (weak, nonatomic) IBOutlet UILabel *clueLabel;
+
 
 // Speech
 @property (nonatomic, strong) NSString *solutionSpeechString;
@@ -178,6 +182,17 @@ static NSInteger const ScorePenalty = 5;
 
 # pragma mark - Segmentation Control
 
+- (IBAction)showClueSegmentedControlTapped:(id)sender {
+    if ([self.showClueSegmentedControl selectedSegmentIndex] == 0) {
+        [self.audioImageView setHidden:YES];
+        [self.clueLabel setHidden:NO];
+    } else {
+        [self.audioImageView setHidden:NO];
+        [self.clueLabel setHidden:YES];
+    }
+}
+
+
 - (IBAction)kanaTypeSegmentedControlTapped:(id)sender {
     if ([self.kanaTypeSegmentedControl selectedSegmentIndex] == 0) {
         switch (self.quizType) {
@@ -201,7 +216,7 @@ static NSInteger const ScorePenalty = 5;
         }
     }
     
-    self.countdownTime = 0;
+    [self resetTimer];
     [self generateQuestion];
 }
 

@@ -32,7 +32,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCb-WZ-OaN" userLabel="Header">
@@ -88,7 +88,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvm-IP-75f" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="272" width="320" height="296"/>
+                                <rect key="frame" x="0.0" y="272" width="320" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M8-sn-l73">
@@ -181,7 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hLR-fg-t2N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a6t-A5-Lyc" customClass="KQMultipleChoiceView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ha9-CW-kOA" userLabel="Header">
@@ -213,7 +213,7 @@
                                 <rect key="frame" x="0.0" y="94" width="320" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-Zm-dK8">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volume.png" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-Zm-dK8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -259,7 +259,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XPk-ZL-eyq" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="272" width="320" height="296"/>
+                                <rect key="frame" x="0.0" y="272" width="320" height="208"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-c2-Dl4" userLabel="Answer 1 Button" customClass="KQAnswerButton">
@@ -331,7 +331,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC9-Yf-mDt">
-                                        <rect key="frame" x="256" y="248" width="42" height="36"/>
+                                        <rect key="frame" x="256" y="160" width="42" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Next">
@@ -343,7 +343,7 @@
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wgq-fE-Muj">
-                                        <rect key="frame" x="20" y="248" width="143" height="29"/>
+                                        <rect key="frame" x="20" y="160" width="143" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <segments>
@@ -353,6 +353,21 @@
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="kanaTypeSegmentedControlTapped:" destination="XUb-w1-KGc" eventType="valueChanged" id="k38-33-wCL"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3D8-oL-irD">
+                                        <rect key="frame" x="20" y="124" width="143" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="143" id="9B4-gn-x8w"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="On"/>
+                                            <segment title="Off"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showClueSegmentedControlTapped:" destination="XUb-w1-KGc" eventType="valueChanged" id="Dcg-MZ-SEC"/>
                                         </connections>
                                     </segmentedControl>
                                 </subviews>
@@ -365,8 +380,10 @@
                                     <constraint firstItem="nxF-Vq-Ub3" firstAttribute="top" secondItem="XPk-ZL-eyq" secondAttribute="top" constant="20" id="PzB-Qg-qXI"/>
                                     <constraint firstItem="9W6-c2-Dl4" firstAttribute="top" secondItem="XPk-ZL-eyq" secondAttribute="top" constant="20" id="Tz2-DT-7xS"/>
                                     <constraint firstItem="5Ac-kq-NQL" firstAttribute="top" secondItem="nxF-Vq-Ub3" secondAttribute="bottom" constant="8" id="Xd4-Fz-gZt"/>
+                                    <constraint firstItem="3D8-oL-irD" firstAttribute="leading" secondItem="XPk-ZL-eyq" secondAttribute="leading" constant="20" id="aYX-0d-4hp"/>
                                     <constraint firstAttribute="trailing" secondItem="nxF-Vq-Ub3" secondAttribute="trailing" constant="20" id="fk9-an-Oqc"/>
                                     <constraint firstItem="Wgq-fE-Muj" firstAttribute="leading" secondItem="XPk-ZL-eyq" secondAttribute="leading" constant="20" id="nKw-Vt-chy"/>
+                                    <constraint firstItem="Wgq-fE-Muj" firstAttribute="top" secondItem="3D8-oL-irD" secondAttribute="bottom" constant="8" id="p1u-YH-VJ1"/>
                                     <constraint firstAttribute="trailing" secondItem="5Ac-kq-NQL" secondAttribute="trailing" constant="22" id="qeU-NH-gq4"/>
                                     <constraint firstItem="dee-Uv-p0m" firstAttribute="top" secondItem="9W6-c2-Dl4" secondAttribute="bottom" constant="8" id="um8-Lo-0rj"/>
                                     <constraint firstItem="dee-Uv-p0m" firstAttribute="leading" secondItem="XPk-ZL-eyq" secondAttribute="leading" constant="20" id="xYl-Vk-wmx"/>
@@ -403,8 +420,11 @@
                         <outlet property="answerButtonB" destination="nxF-Vq-Ub3" id="Eql-b4-27O"/>
                         <outlet property="answerButtonC" destination="dee-Uv-p0m" id="6Ct-QW-k4r"/>
                         <outlet property="answerButtonD" destination="5Ac-kq-NQL" id="BOT-vY-SLi"/>
+                        <outlet property="audioImageView" destination="JM0-Zm-dK8" id="3L9-i6-kMC"/>
+                        <outlet property="clueLabel" destination="xZq-eo-2Of" id="fQO-ga-IXH"/>
                         <outlet property="kanaTypeSegmentedControl" destination="Wgq-fE-Muj" id="ZUp-Jo-Xdx"/>
                         <outlet property="multipleChoiceView" destination="a6t-A5-Lyc" id="p4b-KB-daE"/>
+                        <outlet property="showClueSegmentedControl" destination="3D8-oL-irD" id="ORx-X1-0og"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FwJ-TM-VHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,11 +446,11 @@
                         <viewControllerLayoutGuide type="bottom" id="A1N-af-wVK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XM1-2k-xgx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p1p-ac-zVw">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="104" maxX="0.0" maxY="0.0"/>
@@ -554,10 +574,13 @@
             <point key="canvasLocation" x="-516" y="-1131"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="volume.png" width="500" height="500"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="hX5-39-BBe"/>

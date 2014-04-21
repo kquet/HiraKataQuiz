@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B0953D818E3A6DB00634DD4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B0953D718E3A6DB00634DD4 /* icon@2x.png */; };
+		6B00B1E81904A6BF00E95106 /* volume.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B00B1E71904A6BF00E95106 /* volume.png */; };
+		6B00B1EB1904B12200E95106 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B00B1E91904B12200E95106 /* icon.png */; };
+		6B00B1EC1904B12200E95106 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B00B1EA1904B12200E95106 /* icon@2x.png */; };
 		6BB2CCB218DF857C00E364AD /* KQAnswerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */; };
 		6BB39FE818E257E800561C5C /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB39FE718E257E800561C5C /* Word.m */; };
 		6BB39FEA18E2636200561C5C /* Words.json in Resources */ = {isa = PBXBuildFile; fileRef = 6BB39FE918E2636200561C5C /* Words.json */; };
@@ -50,7 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B0953D718E3A6DB00634DD4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		6B00B1E71904A6BF00E95106 /* volume.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume.png; sourceTree = "<group>"; };
+		6B00B1E91904B12200E95106 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		6B00B1EA1904B12200E95106 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		6BB2CCB018DF857C00E364AD /* KQAnswerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KQAnswerButton.h; path = Classes/Views/KQAnswerButton.h; sourceTree = "<group>"; };
 		6BB2CCB118DF857C00E364AD /* KQAnswerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KQAnswerButton.m; path = Classes/Views/KQAnswerButton.m; sourceTree = "<group>"; };
 		6BB39FE618E257E800561C5C /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = Classes/Models/Word.h; sourceTree = "<group>"; };
@@ -122,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B00B1E61904A6A100E95106 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6B00B1E71904A6BF00E95106 /* volume.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		6BDC2EBC18DE7B2F00FC0413 /* Collection View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +184,7 @@
 				6BEAC70618DBBB2800175232 /* Images.xcassets */,
 				6BEAC6F218DBBB2800175232 /* Supporting Files */,
 				6BEAC72B18DBBD2200175232 /* Utilities */,
+				6B00B1E61904A6A100E95106 /* Assets */,
 			);
 			path = HiraKataQuiz;
 			sourceTree = "<group>";
@@ -179,7 +192,8 @@
 		6BEAC6F218DBBB2800175232 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6B0953D718E3A6DB00634DD4 /* icon@2x.png */,
+				6B00B1E91904B12200E95106 /* icon.png */,
+				6B00B1EA1904B12200E95106 /* icon@2x.png */,
 				6BEAC6F318DBBB2800175232 /* HiraKataQuiz-Info.plist */,
 				6BEAC6F418DBBB2800175232 /* InfoPlist.strings */,
 				6BEAC6F718DBBB2800175232 /* main.m */,
@@ -380,13 +394,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BEAC70218DBBB2800175232 /* Main_iPad.storyboard in Resources */,
-				6B0953D818E3A6DB00634DD4 /* icon@2x.png in Resources */,
 				6BB39FEA18E2636200561C5C /* Words.json in Resources */,
+				6B00B1EB1904B12200E95106 /* icon.png in Resources */,
 				6BEAC70718DBBB2800175232 /* Images.xcassets in Resources */,
+				6B00B1E81904A6BF00E95106 /* volume.png in Resources */,
 				6BEAC6FF18DBBB2800175232 /* Main_iPhone.storyboard in Resources */,
 				6BEAC6F618DBBB2800175232 /* InfoPlist.strings in Resources */,
 				6BDC2EBE18DE7B8A00FC0413 /* KQSymbolSettingsCollectionViewCell.xib in Resources */,
 				6BEAC74418DBC47500175232 /* Symbols.json in Resources */,
+				6B00B1EC1904B12200E95106 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

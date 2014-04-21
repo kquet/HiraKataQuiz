@@ -50,9 +50,6 @@
     
     switch (quizType) {
         case QuizViewTypeSymbols:
-            [self.clueLabel setHidden:NO];
-            [self.clueImage setHidden:YES];
-            
             self.clueLabel.text = question;
             break;
         case QuizViewTypeWords:
