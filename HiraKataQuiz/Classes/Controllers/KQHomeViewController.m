@@ -8,7 +8,7 @@
 
 #import "KQHomeViewController.h"
 #import "KQMultipleChoiceViewController.h"
-#import "KQSettingsViewController.h"
+#import "KQCharacterSelectionViewController.h"
 #import "SymbolDictionary.h"
 #import "WordDictionary.h"
 
@@ -32,10 +32,10 @@ static NSString *const UserDefaultsSelectionIdentifier = @"selectedSet";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:PhoneticQuizSegueIdentifier]) {
         KQMultipleChoiceViewController *multipleChoiceViewController = [segue destinationViewController];
-        [multipleChoiceViewController setQuizType:SolutionPhoneticAnswersHiragana];
+        [multipleChoiceViewController setQuiz:PhoneticToCharacter];
     } else if ([[segue identifier] isEqualToString:KanaQuizSegueIdentifier]) {
         KQMultipleChoiceViewController *multipleChoiceViewController = [segue destinationViewController];
-        [multipleChoiceViewController setQuizType:SolutionHiraganaAnswersPhonetic];
+        [multipleChoiceViewController setQuiz:CharacterToPhonetic];
     }
 }
 

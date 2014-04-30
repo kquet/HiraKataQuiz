@@ -2,90 +2,89 @@
 //  KQSettingsViewController.m
 //  HiraKataQuiz
 //
-//  Created by Kael Quet on 2014-03-20.
+//  Created by Kael Quet on 2014-04-29.
 //  Copyright (c) 2014 Kael Quet. All rights reserved.
 //
 
 #import "KQSettingsViewController.h"
-#import "KQSymbolSettingsCollectionViewCell.h"
-#import "SymbolDictionary.h"
-#import "Symbol.h"
 
-static NSString *const CharacterCellReuseIdentifier = @"KQSymbolSettingsCollectionViewCell";
-static NSString *const CharacterSelectionHeaderIdentifier = @"CharacterSelectionHeaderIdentifier";
-static NSString *const UserDefaultsSelectedSetIdentifier = @"selectedSet";
+static NSString *const UserDefaultsAudioClueEnabledIdentifier = @"settingsAudioClueEnabled";
+static NSString *const UserDefaultsVisualClueEnabledIdentifier = @"settingsVisualClueEnabled";
+static NSString *const UserDefaultsSelectedSyllabryIdentifier = @"selectedSyllabry";
 
-@interface KQSettingsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface KQSettingsViewController ()
 
-@property (nonatomic, weak) SymbolDictionary *symbolDictionary;
-
-@property (nonatomic, weak) IBOutlet UICollectionView *characterSetCollectionView;
-@property (nonatomic, strong) NSArray *userSelectedCharacterDefaults;
+@property (weak, nonatomic) IBOutlet UISwitch *audioClueSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *visualClueSwitch;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *syllabrySegmentedControl;
 
 @end
 
 @implementation KQSettingsViewController
 
--(void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    self.symbolDictionary = [SymbolDictionary sharedManager];
-    
-    [self.characterSetCollectionView registerNib:[UINib nibWithNibName:CharacterCellReuseIdentifier bundle:nil] forCellWithReuseIdentifier:CharacterCellReuseIdentifier];
-    self.characterSetCollectionView.allowsMultipleSelection = YES;
-    
-    [self retrieveUserDefaults];
+    [self configureSettingsForUserDefaults];
 }
 
-#pragma mark - NSUserDefaults
-
-- (void)retrieveUserDefaults {
-    self.userSelectedCharacterDefaults = [[NSUserDefaults standardUserDefaults] arrayForKey:UserDefaultsSelectedSetIdentifier];
-}
-
-- (void)saveUserDefaultsSelectionArray:(NSArray *)selection {
-    NSMutableArray *indexArray = [[NSMutableArray alloc] init];
-    for (NSIndexPath *indexPath in selection) {
-        [indexArray addObject:[[NSNumber alloc] initWithInteger:indexPath.item]];
+- (void)configureSettingsForUserDefaults {
+    BOOL isAudioEnabled = [self isAudioClueEnabled];
+    BOOL isVisualEnabled = [self isVisualClueEnabled];
+    
+    if(!isAudioEnabled) {
+        isVisualEnabled = YES;
+        [self.visualClueSwitch setEnabled:NO];
     }
-    [[NSUserDefaults standardUserDefaults] setObject:[indexArray copy] forKey:UserDefaultsSelectedSetIdentifier];
     
-    [self retrieveUserDefaults];
+    [self.audioClueSwitch setOn:isAudioEnabled];
+    [self.visualClueSwitch setOn:isVisualEnabled];
+    
+    [self.syllabrySegmentedControl setSelectedSegmentIndex:[self getSyllabryType]];
 }
 
-#pragma mark - UICollectionViewDataSource
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.symbolDictionary.symbolArray count];
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-# pragma mark - UICollectionViewDelegate
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:CharacterSelectionHeaderIdentifier forIndexPath:indexPath];
-    return headerView;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    KQSymbolSettingsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CharacterCellReuseIdentifier forIndexPath:indexPath];
-    [cell configureCellForSymbol:self.symbolDictionary.symbolArray[indexPath.item]];
-    if ([self.userSelectedCharacterDefaults containsObject:[self.symbolDictionary.symbolArray[indexPath.item] getSymbolId]]) {
-        [cell setSelected:YES];
-        [collectionView selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+- (IBAction)audioClueSwitched:(id)sender {
+    if (self.audioClueSwitch.on) {
+        [self.visualClueSwitch setEnabled:YES];
+    } else {
+        [self.visualClueSwitch setEnabled:NO];
     }
-    return cell;
+    
+    [[NSUserDefaults standardUserDefaults] setBool:self.audioClueSwitch.on forKey:UserDefaultsAudioClueEnabledIdentifier];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self saveUserDefaultsSelectionArray:[collectionView indexPathsForSelectedItems]];
+- (IBAction)visualClueSwitched:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:self.visualClueSwitch.on forKey:UserDefaultsVisualClueEnabledIdentifier];
+
+    if (self.visualClueSwitch.on) {
+        [self.audioClueSwitch setEnabled:YES];
+    } else {
+        [self.audioClueSwitch setEnabled:NO];
+    }
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self saveUserDefaultsSelectionArray:[collectionView indexPathsForSelectedItems]];
+- (IBAction)syllabrySegmentedControlChanged:(id)sender {
+    SyllabryType syllabryType;
+    
+    if ([sender selectedSegmentIndex] == 0) {
+        syllabryType = Hiragana;
+    } else {
+        syllabryType = Katakana;
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@(syllabryType) forKey:UserDefaultsSelectedSyllabryIdentifier];
+}
+
+-(BOOL)isAudioClueEnabled {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultsAudioClueEnabledIdentifier];
+}
+
+- (BOOL)isVisualClueEnabled {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:UserDefaultsVisualClueEnabledIdentifier];
+}
+
+- (SyllabryType)getSyllabryType {
+    return [[[NSUserDefaults standardUserDefaults] objectForKey:UserDefaultsSelectedSyllabryIdentifier] integerValue];
 }
 
 @end

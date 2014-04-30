@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Symbol.h"
 
+typedef enum {
+    PhoneticToCharacter = 0,
+    CharacterToPhonetic
+} Quiz;
+
 @interface KQMultipleChoiceViewController : UIViewController
 
-@property (nonatomic) QuizType quizType;
+@property (nonatomic) Quiz quiz;
 
 @end

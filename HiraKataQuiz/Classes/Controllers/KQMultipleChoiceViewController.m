@@ -11,6 +11,7 @@
 #import "KQMultipleChoiceView.h"
 #import "SymbolDictionary.h"
 #import "KQAnswerButton.h"
+#import "KQSettingsViewController.h"
 
 // TODO: Implement score/timer class for reuse
 static NSString *const SpeechUtteranceVoiceLanguageJapanese = @"ja-JP";
@@ -21,16 +22,16 @@ static NSInteger const ScorePenalty = 5;
 @interface KQMultipleChoiceViewController ()
 
 @property (nonatomic, weak) SymbolDictionary *symbolDictionary;
+@property (nonatomic, strong) KQSettingsViewController *settingsController;
+@property (nonatomic) QuizType quizType;
 
 // View
 @property (nonatomic, weak) IBOutlet KQMultipleChoiceView *multipleChoiceView;
-@property (nonatomic, weak) IBOutlet UISegmentedControl *kanaTypeSegmentedControl;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *showClueSegmentedControl;
 @property (weak, nonatomic) IBOutlet UIImageView *audioImageView;
 @property (weak, nonatomic) IBOutlet UILabel *clueLabel;
 
-
 // Speech
+@property (nonatomic) BOOL isSpeechEnabled;
 @property (nonatomic, strong) NSString *solutionSpeechString;
 @property (nonatomic, strong) AVSpeechUtterance *speechUtterance;
 @property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
@@ -57,12 +58,12 @@ static NSInteger const ScorePenalty = 5;
 {
     [super viewDidLoad];
     
+    self.settingsController = [[KQSettingsViewController alloc] init];
+    
     self.symbolDictionary = [SymbolDictionary sharedManager];
 
-    self.speechUtterance = [[AVSpeechUtterance alloc] init];
-    self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
-    
-    [self.kanaTypeSegmentedControl setSelectedSegmentIndex:0];
+    [self configureQuizWithSettings];
+
     self.quizScore = 0;
     self.answerStrings = [[NSArray alloc] init];
     self.answerButtons = [[NSArray alloc] initWithObjects:self.answerButtonA,
@@ -134,16 +135,18 @@ static NSInteger const ScorePenalty = 5;
 #pragma mark - AVSpeechSynthesizer
 
 - (void)speechSynthesizerWithString:(NSString *)string andLanguage:(NSString *)language {
-    switch (self.quizType) {
-        case SolutionPhoneticAnswersHiragana:
-        case SolutionPhoneticAnswersKatakana:
-            self.speechUtterance = [AVSpeechUtterance speechUtteranceWithString:string];
-            self.speechUtterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:language];
-            self.speechUtterance.rate = AVSpeechUtteranceMinimumSpeechRate;
-            [self.speechSynthesizer speakUtterance:self.speechUtterance];
-            break;
-        default:
-            break;
+    if(self.isSpeechEnabled) {
+        switch (self.quizType) {
+            case SolutionPhoneticAnswersHiragana:
+            case SolutionPhoneticAnswersKatakana:
+                self.speechUtterance = [AVSpeechUtterance speechUtteranceWithString:string];
+                self.speechUtterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:language];
+                self.speechUtterance.rate = AVSpeechUtteranceMinimumSpeechRate;
+                [self.speechSynthesizer speakUtterance:self.speechUtterance];
+                break;
+            default:
+                break;
+        }
     }
 }
 
@@ -163,61 +166,54 @@ static NSInteger const ScorePenalty = 5;
     }
 }
 
-- (IBAction)nextQuestionButtonTapped:(id)sender {
-    [self resetTimer];
-    [self generateQuestion];
-}
-
-- (IBAction)backButtonTapped:(id)sender {
-    [self.speechSynthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
-    [self.countdownTimer invalidate];
-    self.countdownTimer = nil;
-}
-
 - (IBAction)speechClueTapped:(id)sender {
     if (!self.speechSynthesizer.speaking) {
         [self speechSynthesizerWithString:self.solutionSpeechString andLanguage:SpeechUtteranceVoiceLanguageJapanese];
     }
 }
 
-# pragma mark - Segmentation Control
+# pragma mark - Settings Configurations
 
-- (IBAction)showClueSegmentedControlTapped:(id)sender {
-    if ([self.showClueSegmentedControl selectedSegmentIndex] == 0) {
-        [self.audioImageView setHidden:YES];
+- (void)configureQuizWithSettings {
+    if([self.settingsController isVisualClueEnabled]) {
         [self.clueLabel setHidden:NO];
+        [self.audioImageView setHidden:YES];
     } else {
-        [self.audioImageView setHidden:NO];
         [self.clueLabel setHidden:YES];
-    }
-}
-
-
-- (IBAction)kanaTypeSegmentedControlTapped:(id)sender {
-    if ([self.kanaTypeSegmentedControl selectedSegmentIndex] == 0) {
-        switch (self.quizType) {
-            case SolutionPhoneticAnswersKatakana:
-                self.quizType = SolutionPhoneticAnswersHiragana;
-                break;
-            case SolutionKatakanaAnswersPhonetic:
-                self.quizType = SolutionHiraganaAnswersPhonetic;
-            default:
-                break;
-        }
-    } else {
-        switch (self.quizType) {
-            case SolutionPhoneticAnswersHiragana:
-                self.quizType = SolutionPhoneticAnswersKatakana;
-                break;
-            case SolutionHiraganaAnswersPhonetic:
-                self.quizType = SolutionKatakanaAnswersPhonetic;
-            default:
-                break;
-        }
+        [self.audioImageView setHidden:NO];
     }
     
-    [self resetTimer];
-    [self generateQuestion];
+    if ([self.settingsController isAudioClueEnabled]) {
+        self.isSpeechEnabled = YES;
+        self.speechUtterance = [[AVSpeechUtterance alloc] init];
+        self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
+    }
+    
+    switch ([self.settingsController getSyllabryType]) {
+        case Katakana:
+            switch (self.quiz) {
+                case CharacterToPhonetic:
+                    self.quizType = SolutionKatakanaAnswersPhonetic;
+                    break;
+                case PhoneticToCharacter:
+                default:
+                    self.quizType = SolutionPhoneticAnswersKatakana;
+                    break;
+            }
+            break;
+        case Hiragana:
+        default:
+            switch (self.quiz) {
+                case CharacterToPhonetic:
+                    self.quizType = SolutionHiraganaAnswersPhonetic;
+                    break;
+                case PhoneticToCharacter:
+                default:
+                    self.quizType = SolutionPhoneticAnswersHiragana;
+                    break;
+            }
+            break;
+    }
 }
 
 @end
